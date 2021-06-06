@@ -20,7 +20,7 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
-     //Relación muchos a muchos
+    //Relación muchos a muchos
     //Se indica a laravel la relación de post y muchas etiquetas 
     public function tags()
     {
