@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { background: #0e0e10;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 24px;
+    color: #fff;
+    overflow: visible;
+    overflow-x: hidden;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 1.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+margin-bottom: 1em;
+}
+
+
+.page-link{
+    color: rgb(51, 9, 9);
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #292929;
+    border-color: #000000;
+}
+.titlecategory {font-size: 0.95em; font-weight: 400;}
+.titlepost {font-size: 1.1em; font-weight: 600; text-transform: uppercase;}
+.pictureArticle {margin: 1.5em;}
+.textresumen {font-size: 1em; text-align: justify}
+
+
+.bodyAbstract{
+    font-style: italic;
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.8em;
+
+}
+.bodyAbstract p:not(:first-of-type) {text-indent: 2em;}
+
+.bodyPost{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 0.6em;
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.bodyPost  .textPost::first-letter {
+    float: left;
+    font-size: 5.3em; 
+    
+    margin: 0.15em 0.15em 0 0;  
+    line-height: 0.555em;
+		
+}
+
+.bodyPost p:not(:first-of-type) {text-indent: 2em;}

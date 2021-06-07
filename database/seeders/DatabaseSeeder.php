@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         $tags = Tag::all();
         Post::all()->each(function ($post) use ($tags) { 
             $post->tags()->attach(
-                $tags->random(Rand(1, 5))
+                $tags->random(Rand(5, 10))
             ); 
         });
         
