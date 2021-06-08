@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
 *{
     padding: 0;
@@ -6,15 +7,44 @@
     box-sizing: border-box;
 }
 
-body { background: #0e0e10;
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+}
+
+body { 
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 1em;
-    line-height: 24px;
-    color: #fff;
     overflow: visible;
     overflow-x: hidden;
+}
+header{
+    position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+    margin-bottom: 1em;
+    z-index: 99;
+}
+.container{
+    margin-top: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+aside{
+    position: inherit;
 }
 h1 {
     text-transform: uppercase;
@@ -25,22 +55,12 @@ h1 {
 a{
     text-decoration: none;
 }
-
-header{
-margin-bottom: 1em;
+p{
+    margin-bottom: 0em;
 }
 
 
-.page-link{
-    color: rgb(51, 9, 9);
-}
 
-.page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #292929;
-    border-color: #000000;
-}
 .titlecategory {font-size: 0.95em; font-weight: 400;}
 .titlepost {font-size: 1.1em; font-weight: 600; text-transform: uppercase;}
 .pictureArticle {margin: 1.5em;}
@@ -64,13 +84,12 @@ margin-bottom: 1em;
     text-align: justify;
 }
 
-.bodyPost  .textPost::first-letter {
+.bodyPost .textPost::first-letter {
+    font-family: 'Parisienne', cursive;
     float: left;
-    font-size: 5.3em; 
-    
+    font-size: 5.5em; 
     margin: 0.15em 0.15em 0 0;  
     line-height: 0.555em;
-		
 }
 
 .bodyPost p:not(:first-of-type) {text-indent: 2em;}

@@ -48,7 +48,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center">   
     <h6 class="P-2">Últimas entradas en esta Categoría:</h6>
         @foreach($LastCategoryEntries as $LastCategoryEntrie)
-        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+        <div class="card mb-3" style="max-width: 25rem;">
         <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/pictureArticle/'.$LastCategoryEntrie->file) }}" class="card-img-top" alt="{{ $post->post_image }}"></a>
             <div class="card-body">
                 <h6 class="card-title">{{ $LastCategoryEntrie->name }}</h6>
