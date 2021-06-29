@@ -287,7 +287,7 @@
         </main>
 
         <footer class="text-muted py-5">
-
+        
         </footer>
         <script src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>

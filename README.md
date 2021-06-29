@@ -15,12 +15,6 @@ laravel new cmsblog --jet
 C:\xampp\htdocs> laravel new CMSBlogLaravel --jet
 
 
-    |     |         |
-    |,---.|--- ,---.|--- ,---.,---.,---.,-.-.
-    ||---'|    `---.|    |    |---',---|| | |
-`---'`---'`---'`---'`---'`    `---'`---^` ' '
-
-
 Which Jetstream stack do you prefer?
   [0] livewire
   [1] inertia
@@ -40,7 +34,7 @@ php artisan make:model Tag -m
 
 Creación de tabla intermedia para relación muchos a muchos
 
-php artisan make:migration create_post_tag_tablet (Tener presente ordenarlo alfabéticamente)
+php artisan make:migration create_post_tag_tablet (Tener presente que al crearlo debe tener un nombre ordenado alfabéticamente)
 
 php artisan migrate
 php artisan migrate:refresh
@@ -50,6 +44,15 @@ php artisan make:factory PostFactory
 php artisan make:factory TagFactory
 
 php artisan migrate:refresh --seed
+
+
+php artisan make:controller Admin/TagController --resource
+php artisan make:controller Admin/CategoryController --resource
+php artisan make:controller Admin/PostController --resource
+
+
+php artisan r:l --name=admin.categories 
+
 
 -------------------------------------
 
