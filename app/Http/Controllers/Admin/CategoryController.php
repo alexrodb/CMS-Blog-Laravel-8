@@ -31,6 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        
         return view('admin.categories.create',[
             'category'=> new category // se envia un proyecto vacio {{ old('xxxx', null)}} = {{ old('xxxx')}}, esta linea es para hacer identicos los formularios y poder reutizar uno para guardar y editar.
         ]);
@@ -45,6 +46,7 @@ class CategoryController extends Controller
     public function store(CategoryStoreRequest $request)
     {
         //Salva los datos
+        
         $category = Category::create($request->all());//Acepta datos masivos, pero en category hay control de los campos que se necesitan 
         return redirect()->route('admin.categories.edit', $category->id)
         ->with('info','Categoría Creada con éxito');

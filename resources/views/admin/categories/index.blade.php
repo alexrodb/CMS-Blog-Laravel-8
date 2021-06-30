@@ -1,10 +1,12 @@
 @extends('layouts.none')
 
 @section('content')
+@include('admin.AlertsAndCallouts')
 <div class="col-lg-8">
     <div class="card text-white bg-dark">
     <div class="card-header">Categorías / Lista completa</div>
         <div class="card-body">
+        <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.create')}}" role="button"><span class="bi bi-eye"></span> crear</a>
             <div class="table-responsive">
                 <table class="table table-dark table-striped table-sm table align-middle">
                     <thead>

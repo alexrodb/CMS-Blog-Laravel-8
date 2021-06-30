@@ -126,10 +126,10 @@
                     
                 <div class="profile-details">
                 <div class="profile-content">
-                    <img src="image/profile.jpg" alt="profile">
+                    
                 </div>
                 <div class="name-job">
-                    <div class="profile_name">{{ Auth::user()->name }}</div>
+                    <div class="profile_name">lorem</div>
                     <div class="job">Role</div>
                 </div>
                 <a href="{{ route('profile.show') }}"><span class="material-icons"> settings </span></a>
@@ -162,8 +162,8 @@
             </section>
         </div>
 
-        <script src="{{ asset('assetsAdministrator/js/popper.min.js') }} " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="{{ asset('assetsAdministrator/js/bootstrap.min.js') }} " integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         @yield('scripts')
     </body>
 </html>
