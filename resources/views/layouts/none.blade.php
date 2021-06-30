@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('admin.categories.index') }}">
                         <div class="flexContainer">
                             <div>
                             <span class="material-icons"> category </span>
@@ -103,7 +103,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('admin.categories.index') }}">
                     <span class="material-icons"> category </span>
                     <span class="link_name">Categorías</span>
                     </a>
@@ -129,10 +129,10 @@
                     <img src="image/profile.jpg" alt="profile">
                 </div>
                 <div class="name-job">
-                    <div class="profile_name">Lorem Ipsum</div>
-                    <div class="job">Lorem Admin</div>
+                    <div class="profile_name">{{ Auth::user()->name }}</div>
+                    <div class="job">Role</div>
                 </div>
-                <span class="material-icons"> settings </span>
+                <a href="{{ route('profile.show') }}"><span class="material-icons"> settings </span></a>
                 </div>
                 </li>
             </ul>
@@ -156,12 +156,8 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-9">
-                            @yield('content')
-                        </div>
-
-                        <div class="col-lg-3">
-                        </div>
+                        @yield('content')
+                    </div>
                 </div>
             </section>
         </div>

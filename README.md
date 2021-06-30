@@ -53,6 +53,8 @@ php artisan make:controller Admin/PostController --resource
 
 php artisan r:l --name=admin.categories 
 
+php artisan make:request CategoryStoreRequest
+php artisan make:request CategoryUpdateRequest
 
 -------------------------------------
 
