@@ -2,9 +2,14 @@
 
 @section('content')
 @include('admin.AlertsAndCallouts')
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-light">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Lista completa</li>
+    </ol>
+</nav>
 <div class="col-lg-8">
     <div class="card text-white bg-dark">
-    <div class="card-header">Categorías / Lista completa</div>
         <div class="card-body">
         <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.create')}}" role="button"><span class="bi bi-eye"></span> crear</a>
             <div class="table-responsive">
@@ -49,6 +54,7 @@
         </div>
     </div>
 </div>
+
 <div class="col-lg-4">
 
 </div>
