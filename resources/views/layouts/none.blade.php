@@ -33,7 +33,7 @@
         <script src="{{ asset('assetsAdministrator/js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="sidebar">
+        <div class="sidebar close">
             <div class="logo-details">
                 <span class="material-icons"> coronavirus </span>
                 <span class="logo_name">CMSBlog</span>
