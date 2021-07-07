@@ -18,10 +18,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::orderBy('id','DESC')->paginate(12);
-        return view('admin.categories.index', compact('categories')); // El array se puede escribir tambien como ['categories'=>'$categories']
+        $searchCategory=$request->get('searchCategory');
+        $categories = Category::orderBy('id','DESC')->where('name','like','%'.$searchCategory.'%')->paginate(12);
+        return view('admin.categories.index', compact('categories','searchCategory')); // El array se puede escribir tambien como ['categories'=>'$categories' o 'searchCategory'=>$searchCategory]
     }
 
     /**

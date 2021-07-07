@@ -12,7 +12,22 @@
 <div class="col-lg-8">
     <div class="card text-white bg-dark">
         <div class="card-body">
-        <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.create')}}" role="button"><span class="bi bi-eye"></span> crear</a>
+        <h2 class="mb-3">Categorías</h1>
+        <hr class="mb-4">
+        <div class="row">
+            <div class="col-6">
+                <form class="d-flex">
+                    <input name="searchCategory" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search" value="{{$searchCategory}}">
+                    <button class="btn btn-graydark" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="d-flex justify-content-end mb-3">
+                    <a class="btn btn-light flex-fill" href="{{ route('admin.categories.create')}}" role="button"><span class="bi bi-plus-circle"></span> Crear nuevo</a></div>
+                </div>
+            </div>
+
+        
             <div class="table-responsive">
                 <table class="table table-dark table-striped table-sm table align-middle">
                     <thead>
@@ -45,15 +60,19 @@
 
                     <!-- Modal -->
                     <div class="modal fade" id="modal-delete-{{ $category->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-dialog modal-lg modal-dialog-centered ">
                             <div class="modal-content text-white bg-dark">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Eliminar categoría</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel"><i class="bi bi-exclamation-triangle"></i> Eliminar categoría</h5>
                             </div>
                             <div class="modal-body">
-                            ¿Estás seguro que quieres eliminar {{ $category->name}} ?
+                            
+                                <p>¿Estás seguro que quieres eliminar la categoría <strong>"{{ $category->name}}"</strong> ?</p>
+                                <p>Esta acción no se puede revertir.</p>
+                            
                             </div>
                             <div class="modal-footer">
+
                                 <form action="{{ route('admin.categories.destroy', $category->id) }}" class="" method="POST" >
                                     @method('DELETE')
                                     @csrf

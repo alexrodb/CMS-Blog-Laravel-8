@@ -129,7 +129,7 @@
                     
                 </div>
                 <div class="name-job">
-                    <div class="profile_name">lorem</div>
+                    <div class="profile_name">{{ Auth::user()->name }}</div>
                     <div class="job">Role</div>
                 </div>
                 <a href="{{ route('profile.show') }}"><span class="material-icons"> settings </span></a>
