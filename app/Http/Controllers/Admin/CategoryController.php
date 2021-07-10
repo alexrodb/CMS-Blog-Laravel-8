@@ -50,7 +50,7 @@ class CategoryController extends Controller
         
         $category = Category::create($request->all());//Acepta datos masivos, pero en category hay control de los campos que se necesitan 
         return redirect()->route('admin.categories.edit', $category->id)
-        ->with('info','Categoría Creada con éxito');
+        ->with('info','Creado con éxito');
     }
 
     /**
@@ -91,7 +91,7 @@ class CategoryController extends Controller
         $category->fill($request->all())->save();
 
         return redirect()->route('admin.categories.edit', $category->id)
-        ->with('info','Categoría actualizada con éxito');
+        ->with('info','Actualizado con éxito');
     }
 
     /**

@@ -1,11 +1,11 @@
 @extends('layouts.none')
-
-@section('content')
 @include('admin.AlertsAndCallouts')
+@section('content')
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-light">Dashboard</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Lista completa</li>
+        <li class="breadcrumb-item active" aria-current="page">Lista completa de categorías</li>
     </ol>
 </nav>
 
@@ -50,7 +50,7 @@
                                 <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.show', $category->id )}}" role="button"><span class="bi bi-eye"></span> Ver</a>
                                 <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.edit', $category->id)}}" role="button"><span class="bi bi-pencil"></span> Editar</a>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $category->id}}">
+                                <button type="button" class="btn btn-danger flex-fill m-1" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $category->id}}">
                                 <span class="bi bi-trash"> Eliminar
                                 </button>
 
@@ -62,24 +62,23 @@
                     <div class="modal fade" id="modal-delete-{{ $category->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered ">
                             <div class="modal-content text-white bg-dark">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"><i class="bi bi-exclamation-triangle"></i> Eliminar categoría</h5>
-                            </div>
-                            <div class="modal-body">
-                            
-                                <p>¿Estás seguro que quieres eliminar la categoría <strong>"{{ $category->name}}"</strong> ?</p>
-                                <p>Esta acción no se puede revertir.</p>
-                            
-                            </div>
-                            <div class="modal-footer">
-
-                                <form action="{{ route('admin.categories.destroy', $category->id) }}" class="" method="POST" >
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger m-1 flex-fill "><span class="bi bi-trash"> Eliminar definitivamente</button>
-                                </form>
-                                <button type="button" class="btn btn-graydark" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Cancelar</button>
-                            </div>
+                                <div class="modal-body">
+                                    <p>Esta acción no se puede revertir.</p>
+                                    <p>¿Estás seguro que quieres eliminar la categoría <strong>"{{ $category->name}}"</strong> ?</p>
+                                    
+                                    <div class="d-flex justify-content-end">
+                                        <div class="p-2">
+                                            <form action="{{ route('admin.categories.destroy', $category->id) }}" class="" method="POST" >
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"><span class="bi bi-trash">Sí, eliminar definitivamente</button>
+                                            </form>
+                                        </div>
+                                        <div class="p-2">
+                                        <button type="button" class="btn btn-graydark" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,6 +95,7 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 <div class="col-lg-4">
@@ -105,6 +105,5 @@
 @endsection
 
 @section('scripts')
-<script>
-</script>
+
 @endsection

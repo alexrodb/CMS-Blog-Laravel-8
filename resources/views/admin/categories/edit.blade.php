@@ -1,11 +1,11 @@
 @extends('layouts.none')
-
-@section('content')
 @include('admin.AlertsAndCallouts')
+@section('content')
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-light">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.categories.index') }}" class="link-light">Lista completa</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.categories.index') }}" class="link-light">Lista completa de categorías</a></li>
         <li class="breadcrumb-item active" aria-current="page">Editar Categoría</li>
     </ol>
 </nav>
