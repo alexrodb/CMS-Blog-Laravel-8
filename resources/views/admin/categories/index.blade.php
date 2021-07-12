@@ -15,6 +15,7 @@
         <h2 class="mb-3">Categorías</h1>
         <hr class="mb-4">
         <div class="row">
+            
             <div class="col-6">
                 <form class="d-flex">
                     <input name="searchCategory" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search" value="{{$searchCategory}}">
@@ -33,7 +34,7 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                <div class="d-flex flex-row justify-content-center">ID</div>
+                                <div class="d-flex flex-row justify-content-center">Código</div>
                             </th>
                             <th scope="col"><div class="d-flex flex-row justify-content-center">Nombre</div>
                             </th>
@@ -43,14 +44,14 @@
                     <tbody>
                     @foreach($categories as $category) 
                     <tr>
-                        <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $category->id}}</div></th>
+                        <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $category->category_code}}</div></th>
                         <td>{{ $category->name}}</td>
                         <td>
                             <div class="d-flex flex-row justify-content-between ">
-                                <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.show', $category->id )}}" role="button"><span class="bi bi-eye"></span> Ver</a>
-                                <a class="btn btn-graydark flex-fill m-1" href="{{ route('admin.categories.edit', $category->id)}}" role="button"><span class="bi bi-pencil"></span> Editar</a>
+                                <a class="btn btn-graydark flex-fill m-2" href="{{ route('admin.categories.show', $category->id )}}" role="button"><span class="bi bi-eye"></span> Ver</a>
+                                <a class="btn btn-graydark flex-fill m-2" href="{{ route('admin.categories.edit', $category->id)}}" role="button"><span class="bi bi-pencil"></span> Editar</a>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger flex-fill m-1" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $category->id}}">
+                                <button type="button" class="btn btn-danger flex-fill m-2" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $category->id}}">
                                 <span class="bi bi-trash"> Eliminar
                                 </button>
 

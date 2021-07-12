@@ -16,11 +16,9 @@
                 @include('admin.categories.partials._form',['btnText'=>'Guardar'])
             </form>
         </div>
-        
-    </div>
-    
+    </div> 
 </div>
-<div class="col-lg-4">
 
+<div class="col-lg-4">
 </div>    
 @endsection

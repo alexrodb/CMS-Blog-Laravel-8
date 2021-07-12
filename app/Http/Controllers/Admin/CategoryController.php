@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Helpers\Helper;
 
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
@@ -13,6 +14,11 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +27,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $searchCategory=$request->get('searchCategory');
-        $categories = Category::orderBy('id','DESC')->where('name','like','%'.$searchCategory.'%')->paginate(12);
+        $categories = Category::orderBy('category_code','DESC')->where('name','like','%'.$searchCategory.'%')->paginate(12);
         return view('admin.categories.index', compact('categories','searchCategory')); // El array se puede escribir tambien como ['categories'=>'$categories' o 'searchCategory'=>$searchCategory]
     }
 
@@ -47,8 +53,16 @@ class CategoryController extends Controller
     public function store(CategoryStoreRequest $request)
     {
         //Salva los datos
+
+        $category_code = Helper::IDGenerator(new category, 'category_code', 5, 'CAT'); /** Genera un código personalizado*/
+        $category = new Category;
+        $category->category_code = $category_code;
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->save();
+
+        //$category = Category::create($request->all());//Acepta datos masivos, pero en CategoryStoreRequest y en el modelo Category hay control de los campos que se necesitan 
         
-        $category = Category::create($request->all());//Acepta datos masivos, pero en category hay control de los campos que se necesitan 
         return redirect()->route('admin.categories.edit', $category->id)
         ->with('info','Creado con éxito');
     }

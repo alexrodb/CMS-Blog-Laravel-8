@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Helpers\Helper;
 
 class CategoryFactory extends Factory
 {
@@ -22,8 +23,9 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->unique()->sentence(4);
-        return [    
+        $title = $this->faker->unique()->sentence(4);  
+        
+        return [   
             'name' => $title, //oración de cuatro palabras,
             'slug' => Str::slug($title), //convierte un string a slug
             'body' => $this->faker->text(500), // crea un texto de 500 caracteres.

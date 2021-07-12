@@ -13,13 +13,13 @@
     <div class="card text-white bg-dark">
         <div class="card-body">
             <form method="POST" action ="{{route('admin.categories.update', $category->id)}}" class="row g-3">
-            @method('PATCH')
-            @include('admin.categories.partials._form',['btnText'=>' Actualizar'])
+                @method('PATCH')
+                @include('admin.categories.partials._form',['btnText'=>' Actualizar'])
             </form>
-        </div>
+        </div>    
     </div>
 </div>
-<div class="col-lg-4">
 
+<div class="col-lg-4">
 </div>
 @endsection
