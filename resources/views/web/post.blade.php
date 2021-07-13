@@ -18,8 +18,8 @@
         </div>
 
         <div class="d-flex justify-content-center align-items-center">
-        @if($post->file)
-            <img src="{{ asset('storage/img/pictureArticle/'.$post->file) }}" class="pictureArticle img-fluid" alt="{{ $post->name }}">
+        @if($post->picture)
+            <img src="{{ asset('storage/img/pictureArticle/'.$post->picture) }}" class="pictureArticle img-fluid" alt="{{ $post->name }}">
         @endif
         </div>
 
@@ -38,7 +38,7 @@
         
             @foreach($post->tags as $tag)
             <a class="btn btn-dark fw-bolder" href="{{ route('tag', $tag->slug)}}" role="button">{{ $tag->name }}</a>
-        
+
             @endforeach
         
     </article>
@@ -49,7 +49,7 @@
     <h6 class="P-2">Últimas entradas en esta Categoría:</h6>
         @foreach($LastCategoryEntries as $LastCategoryEntrie)
         <div class="card mb-3" style="max-width: 25rem;">
-        <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/pictureArticle/'.$LastCategoryEntrie->file) }}" class="card-img-top" alt="{{ $post->post_image }}"></a>
+        <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/pictureArticle/'.$LastCategoryEntrie->picture) }}" class="card-img-top" alt="{{ $post->post_image }}"></a>
             <div class="card-body">
                 <h6 class="card-title">{{ $LastCategoryEntrie->name }}</h6>
             </div>

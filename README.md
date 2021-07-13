@@ -51,10 +51,13 @@ php artisan make:controller Admin/CategoryController --resource
 php artisan make:controller Admin/PostController --resource
 
 
-php artisan r:l --name=admin.categories 
+php artisan r:l --name=admin.categories
+php artisan r:l --name=admin.tags 
 
 php artisan make:request CategoryStoreRequest
 php artisan make:request CategoryUpdateRequest
+php artisan make:request TagStoreRequest
+php artisan make:request TagUpdateRequest
 
 -------------------------------------
 
@@ -71,9 +74,10 @@ composer dump-autoload
 
 -------------------------------------
 php artisan --version 
-
 -------------------------------------
 
+
+-------------------------------------
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -1,30 +1,21 @@
-@extends('layouts.app')
-
-@section('MyStyles')
-<link href="{{ asset('vendor/summernote/summernote-lite.min.css') }}" rel="stylesheet">
-@endsection
-
+@extends('layouts.none')
+@include('admin.AlertsAndCallouts')  
 @section('content')
-<div class="container">
-    <div class="card">
-    <div class="card-header">
-        <div class="row">
-            <div class="col">
-            <h2>Crear Una Entrada<h2>
-            </div>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-light">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.posts.index') }}" class="link-light">Lista completa de entradas o publicaciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editar entrada o publicación</li>
+    </ol>
+</nav>
+<div class="col-lg-12">
+    <div class="card text-white bg-dark">
+        <div class="card-body">
+            <form method="POST" action ="{{route('admin.posts.store')}}" class="row g-3">
+                @include('admin.posts.partials._form',['btnText'=>'Guardar'])
+            </form>
         </div>
-    </div>
-    <div class="card-body">
-        <form method="POST" action ="{{route('posts.store')}}" enctype="multipart/form-data">
-        
-        @include('admin.posts.partials._form',['btnText'=>'Guardar'])
-
-        </form>
-    </div>
-
-    <div class="card-footer text-muted">
-        https://getbootstrap.com/docs/4.5/content/tables/
-    </div>
-    </div>
-</div>    
+    </div> 
+</div>
 @endsection

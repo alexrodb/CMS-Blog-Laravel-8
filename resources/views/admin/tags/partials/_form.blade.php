@@ -1,20 +1,24 @@
-             @csrf
-            <div class="form-group">
-                <label>Nombre de la etiqueta</label>
-                <input type="text" name="name" class="form-control" id = "name"  value="{{ old('name', $tag->name)}}">
-            </div>
-            <div class="form-group">
-                <label>URL amigable</label>
-                <input type="text" name="slug" class="form-control" id = "permalink"  value="{{ old('slug', $tag->slug)}}" readonly>
-            </div>
-            <button type="submit" class="btn btn-primary">{{$btnText}}</button>
-        
+            @csrf
 
-            @section('scripts')
-            <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
-            <script>
-                $(document).ready( function() {
-                    $("#name").stringToSlug();
-                });
-            </script>
-            @endsection
+            <div class="d-grid gap-3">
+
+                <div class="col-12 mb-1 p-2">
+                    <label class="mb-2">Nombre de la etiqueta</label>
+                    <input type="text" name="name" class="form-control" id = "name"  value="{{ old('name', $tag->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)">
+                </div>
+
+                <div class="col-12 mb-1 p-2">
+                    <label class="mb-2">URL amigable de esta etiqueta</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-link-45deg"></i></span>
+                        <input type="text" name="slug" class="form-control" id = "slug-text"  value="{{ old('slug', $tag->slug)}}" readonly>
+                    </div>
+                </div>
+                
+                <div class="col-12 p-2">
+                    <div class="d-flex flex-row justify-content-end">
+                    <button type="submit" class="btn btn-success"><span class="bi bi-save"></span> {{$btnText}}</button>
+                    </div>
+                </div>
+
+            </div>

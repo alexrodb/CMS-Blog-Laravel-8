@@ -15,19 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-
+            $table->string('post_code')->nullable()->unique();;
             $table->unsignedBigInteger('user_id')->index();
             $table->unsignedBigInteger('category_id')->index();
-
             $table->string('name');
             $table->string('slug',128)->unique();
-
+            $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
             $table->mediumText('abstract')->nullable();
             $table->longtext('body');
-            $table->text('notes');
-            $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
-
-            $table->string('file',128)->nullable();
+            $table->string('picture',128)->nullable();
             $table->string('image',128)->nullable();
 
             //Relation - Relaciones 

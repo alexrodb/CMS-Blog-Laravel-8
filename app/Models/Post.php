@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    //Permite salvar datos de forma masiva, 
+    protected $fillable = [
+        'user_id','category_id','name','slug','abstract','body','status','picture','image'
+    ];
+
     //Relación uno a muchos inversa
     //Se termina de dar de alta los métodos y relaciones faltantes. 
     //Un post pertenece un usuario

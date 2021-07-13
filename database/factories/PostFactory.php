@@ -32,12 +32,11 @@ class PostFactory extends Factory
             'category_id'=> rand(1,50), //Número aleatorio del 1 al 50
             'name' => $title, //oración de cinco palabras
             'slug' => Str::slug($title), //convierte un string a slug
+            'status'=> $this->faker->randomElement(['DRAFT','PUBLISHED']),
             'abstract' => $this->faker->text(350), // crea un texto de 350 caracteres.
             'body' => $this->faker->text(2000), // crea un texto de 2000 caracteres.
-            'notes' => $this->faker->text(50), // crea un texto de 500 caracteres.
-            'status'=> $this->faker->randomElement(['DRAFT','PUBLISHED']),
-            'file'=> rand(1,10).'.jpg',
-            'image'=> rand(1,10).'.png',
+            'picture'=> rand(1,10).'.jpg',
+            'image'=> rand(1,10).'.jpg',
         ];
     }
 }

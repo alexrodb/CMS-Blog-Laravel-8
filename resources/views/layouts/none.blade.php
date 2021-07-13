@@ -60,7 +60,7 @@
                     <ul class="sub-menu">
                     <li><a class="link_name" href="#">Blog</a></li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('admin.tags.index') }}">
                         <div class="flexContainer">
                             <div>
                             <span class="material-icons"> label </span>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('admin.posts.index') }}">
                         <div class="flexContainer">
                             <div>
                             <span class="material-icons"> article </span>
@@ -93,7 +93,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('admin.tags.index') }}">
                     <span class="material-icons"> label </span>
                     <span class="link_name">Etiquetas</span>
                     </a>
@@ -113,7 +113,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('admin.posts.index') }}">
                     <span class="material-icons"> article </span>
                     <span class="link_name">Entradas</span>
                     </a>

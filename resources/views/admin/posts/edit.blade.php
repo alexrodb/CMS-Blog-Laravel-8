@@ -1,29 +1,22 @@
-@extends('layouts.app')
-
-@section('MyStyles')
-<link href="{{ asset('vendor/summernote/summernote-lite.min.css') }}" rel="stylesheet">
-@endsection
-
+@extends('layouts.none')
+@include('admin.AlertsAndCallouts')
 @section('content')
-<div class="container">
-    <div class="card">
-    <div class="card-header">
-        <div class="row">
-            <div class="col">
-            <h2>Editar Entrada<h2>
-            </div>
-        </div>
-    </div>
-    <div class="card-body">
-        <form method="POST" action ="{{route('posts.update', $post->id)}}" enctype="multipart/form-data">
-        @method('PATCH')
-        @include('admin.posts.partials._form',['btnText'=>'Actualizar'])      
-        </form>
-    </div>
 
-    <div class="card-footer text-muted">
-        https://getbootstrap.com/docs/4.5/content/tables/
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-light">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.posts.index') }}" class="link-light">Lista completa de entradas o publicaciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editar entrada o publicación</li>
+    </ol>
+</nav>
+<div class="col-lg-12">
+    <div class="card text-white bg-dark">
+        <div class="card-body">
+            <form method="POST" action ="{{route('admin.posts.update', $post->id)}}" class="row g-3">
+                @method('PATCH')
+                @include('admin.posts.partials._form',['btnText'=>' Actualizar'])
+            </form>
+        </div>    
     </div>
-    </div>
-</div>    
+</div>
 @endsection
