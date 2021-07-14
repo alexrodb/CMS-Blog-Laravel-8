@@ -9,7 +9,7 @@
     </ol>
 </nav>
 
-<div class="col-lg-8">
+<div class="col-lg-12">
     <div class="card text-white bg-dark">
         <div class="card-body">
         <h2 class="mb-3">Entradas o publicaciones</h1>
@@ -36,7 +36,9 @@
                             <th scope="col">
                                 <div class="d-flex flex-row justify-content-center">Código</div>
                             </th>
-                            <th scope="col"><div class="d-flex flex-row justify-content-center">Nombre</div>
+                            <th scope="col"><div class="d-flex flex-row">Nombre</div>
+                            </th>
+                            <th scope="col"><div class="d-flex flex-row justify-content-center">Estado</div>
                             </th>
                             <th scope="col">&nbsp</th>
                         </tr>
@@ -46,6 +48,14 @@
                     <tr>
                         <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $post->post_code}}</div></th>
                         <td>{{ $post->name}}</td>
+                        <td class="text-center">
+                            @if ($post->status === 'PUBLISHED')
+                            <span class="badge rounded-pill bg-success p-2 fs-6"><i class="bi bi-check-circle"></i> Publicado</span>
+                            @else
+                            <span class="badge rounded-pill bg-warning text-dark p-2 fs-6"><i class="bi bi-exclamation-circle"></i> </i> Borrador</span>       
+                            @endif
+                            
+                        </td>
                         <td>
                             <div class="d-flex flex-row justify-content-between ">
                                 <a class="btn btn-graydark flex-fill m-2" href="{{ route('admin.posts.show', $post->id )}}" role="button"><span class="bi bi-eye"></span> Ver</a>
@@ -99,9 +109,7 @@
     
 </div>
 
-<div class="col-lg-4">
 
-</div>
 
 @endsection
 

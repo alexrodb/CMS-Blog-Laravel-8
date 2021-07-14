@@ -59,16 +59,17 @@ class PostController extends Controller
         $user_id = auth()->user()->id;
         $request->request->add(['user_id' => $user_id]);
         
-        //$category_code = Helper::IDGenerator(new category, 'category_code', 5, 'CAT'); /** Genera un código personalizado*/
-        //$request->request->add(['category_code' => $category_code]);
+        $post_code = Helper::IDGenerator(new Post, 'post_code', 5, 'POST'); /** Genera un código personalizado*/
+        
+        $request-> request->add(['post_code' => $post_code]);
 
         //Salva los datos
-
+        //dd($request->all());  
         $post = Post::create($request->all());//Acepta datos masivos, pero en PostStoreRequest y en el modelo Post hay control de los campos que se necesitan 
-                
+        //
         //Tags
         $post->tags()->attach($request->get('tags')); 
-
+        
         return redirect()->route('admin.posts.edit', $post->id)
         ->with('info','Creado con éxito');
         
@@ -93,10 +94,11 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {    
         $categories = Category::orderBy('name','ASC')->pluck('name','id');
         $tags       = Tag::orderBy('name','ASC')->get();
         $post = Post::find($id);
+        
         return view('admin.posts.edit', compact('post','categories','tags'));
     }
 
@@ -115,7 +117,7 @@ class PostController extends Controller
         
         //Sincroniza las etiquetas de la entrada Tags
         $post->tags()->sync($request->get('tags'));
-
+        
         return redirect()->route('admin.posts.edit', $post->id)
         ->with('info','Actualizado con éxito');
 

@@ -28,8 +28,7 @@ class PostUpdateRequest extends FormRequest
             'slug'          => 'required|unique:posts,slug,' . $this->post, // El Slug debe ser unico, pero ignora el id actual que se está actualizando.
             'category_id'   => 'required|integer',
             'tags'          => 'required|array',
-            'body'          => 'required',
-            
+            'status'        => 'required|in:DRAFT,PUBLISHED',
         ];
     }
 }
