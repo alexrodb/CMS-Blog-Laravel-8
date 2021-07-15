@@ -33,18 +33,18 @@
                             </div>
                             <!--name-->
                             <label class="mb-2">Nombre </label>
-                            <input type="text" name="name" class="form-control  mb-2" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)">
+                            <input type="text" name="name" class="form-control  mb-2" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)" required>
                             <!--slug--> 
                             <label class="mb-2">URL amigable</label>
                             <div class="input-group flex-nowrap  mb-2">
                                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-link-45deg"></i></span>
-                                <input type="text" name="slug" class="form-control" id = "slug-text"  value="{{ old('slug', $post->slug)}}" readonly>
+                                <input type="text" name="slug" class="form-control" id = "slug-text"  value="{{ old('slug', $post->slug)}}" readonly required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <!--category_id--> 
                             <label class="mb-2">Escoge una categoría para esta entrada</label> 
-                            <select name="category_id" class="form-select mb-2">
+                            <select name="category_id" class="form-select mb-2" required>
                                 @foreach($categories as $id => $name)
                                 <option value="{{ $id }}"
                                     {{ (isset($post->category->id) && ($id == $post->category->id)) ? 'selected' : ''}}>{{ $name}}
@@ -53,7 +53,7 @@
                             </select>
                             <!--Tags-->
                             <label class="mb-2">Escoge las etiquetas para esta entrada</label> 
-                            <select class="form-select mb-2" multiple name="tags[]">
+                            <select class="form-select mb-2" multiple name="tags[]" required>
                                 @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}"
                                         @foreach ($post->tags as $postTag)
@@ -69,13 +69,22 @@
                     <div class="col-12 mb-1">
                     <label class="mb-2">Resumen</label>
                     <div class="input-group mb-2">
-                        <textarea class="form-control" name="body" aria-label="With textarea">{{ old('body', $post->abstract)}}</textarea>
+                        <textarea class="form-control" name="abstract" aria-label="With textarea">{{ old('body', $post->abstract)}}</textarea>
                     </div>
                     <div class="col-12 mb-1">
                     <label class="mb-2">Descripción</label>
                     <div class="input-group">
-                        <textarea class="form-control" name="body" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
+                        <textarea class="form-control" id="editor" name="body" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
                     </div>
+
+
+                    <!-- ckeditor -->
+                    <script src="{{ asset('vendor/ckeditor_4.16.1_full/ckeditor/ckeditor.js') }}"></script>
+                    <script src="{{ asset('vendor/ckeditor_4.16.1_full/ckeditor/jsckeditor/initEditor.js') }}"></script>
+                    <script>
+                        initEditor();
+                    </script>
+
                     </div>
                     <div class="col-12 p-2">
                         <div class="d-flex flex-row justify-content-end">
