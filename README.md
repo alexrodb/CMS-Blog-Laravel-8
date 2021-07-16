@@ -75,9 +75,29 @@ composer dump-autoload
 -------------------------------------
 php artisan --version 
 -------------------------------------
+composer require haruncpi/laravel-simple-filemanager
+php artisan filemanager:install
+
+PS C:\xampp\htdocs\CMS-Blog-Laravel-8> php artisan filemanager:install
+Copied Directory [\vendor\haruncpi\laravel-simple-filemanager\config] To [\config]
+Publishing complete.
+config published
+Copied Directory [\vendor\haruncpi\laravel-simple-filemanager\assets] To [\public\filemanager]
+Publishing complete.
+assets published
+Copied Directory [\vendor\haruncpi\laravel-simple-filemanager\migrations] To [\database\migrations]
+Publishing complete.
+migration published
+Nothing to migrate.
+PS C:\xampp\htdocs\CMS-Blog-Laravel-8> 
 
 
+@FilemanagerScript
+</head>
 -------------------------------------
+
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

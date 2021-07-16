@@ -6,6 +6,10 @@
             var myAlert =document.getElementById('toastNotice');
             var bsAlert = new bootstrap.Toast(myAlert);
             bsAlert.show();
+
+            CKEDITOR.replace('ckeditor', {
+                            filebrowserBrowseUrl: filemanager.ckBrowseUrl,
+            });
         };
     </script>
     @endsection
@@ -36,6 +40,11 @@
             var myAlert =document.getElementById('toastNotice');
             var bsAlert = new bootstrap.Toast(myAlert);
             bsAlert.show();
+
+
+            CKEDITOR.replace('ckeditor', {
+                            filebrowserBrowseUrl: filemanager.ckBrowseUrl,
+            });
         };
     </script>
     @endsection

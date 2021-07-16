@@ -5,9 +5,10 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
+	config.extraPlugins = 'justify';
 	config.language = 'es';
 	config.uiColor = '#9E9E9E';
-	config.height = 300;
+	config.height = "60rem";
 	config.toolbarCanCollapse = true;
 
 	config.toolbarGroups = [

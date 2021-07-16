@@ -31,6 +31,9 @@
 
         <!-- Scripts -->
         <script src="{{ asset('assetsAdministrator/js/app.js') }}" defer></script>
+
+        @FilemanagerScript
+
     </head>
     <body>
         <div class="sidebar close">
@@ -166,6 +169,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         <!-- stringToSlug -->
         <script src="{{ asset('vendor/stringToSlug/stringToSlug.js') }}"></script>
+        
         @yield('scripts')
     </body>
 </html>
