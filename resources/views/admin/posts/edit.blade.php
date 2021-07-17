@@ -12,7 +12,7 @@
 <div class="col-lg-12">
     <div class="card text-white bg-dark">
         <div class="card-body">
-            <form method="POST" action ="{{route('admin.posts.update', $post->id)}}" class="row g-3">
+            <form method="POST" action ="{{route('admin.posts.update', $post->id)}}" class="row g-3" enctype="multipart/form-data">
                 @method('PATCH')
                 @include('admin.posts.partials._form',['btnText'=>' Actualizar'])
             </form>

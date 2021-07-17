@@ -75,7 +75,7 @@
                             <div class="modal-content text-white bg-dark">
                                 <div class="modal-body">
                                     <p>Esta acción no se puede revertir.</p>
-                                    <p>¿Estás seguro que quieres eliminar la categoría <strong>"{{ $post->name}}"</strong> ?</p>
+                                    <p>¿Estás seguro que quieres eliminar <strong>"{{ $post->name}}"</strong> ?</p>
                                     
                                     <div class="d-flex justify-content-end">
                                         <div class="p-2">

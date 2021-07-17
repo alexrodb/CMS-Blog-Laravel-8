@@ -135,7 +135,9 @@
                     <div class="profile_name">{{ Auth::user()->name }}</div>
                     <div class="job">Role</div>
                 </div>
-                <a href="{{ route('profile.show') }}"><span class="material-icons"> settings </span></a>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"><span class="material-icons"> logout </span></a>
                 </div>
                 </li>
             </ul>
@@ -143,16 +145,45 @@
 
         <div class="home-section">
 
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <div class="home-content">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="home-content">
                     <span class="material-icons ico-menu">menu</span>
                     <span class="text"></span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-end">
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    <div class="d-flex align-items-center">
+                                        <span class="navbar-text p-1">{{ __('Logout') }}</span>
+                                        <span class="material-icons"> logout </span>
+                                    </div>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                </form>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
                     </div>
-                    <div class="d-flex align-items-center justify-content-end">
-                    <span class="navbar-text p-1">Cerrar sesión</span>
-                    <span class="material-icons"> logout </span>
-                    </div>
+                </div>
+            </div>
+            </nav>
+
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    
+                    
                 </div>
             </nav>
 

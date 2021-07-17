@@ -24,7 +24,6 @@ class CreatePostsTable extends Migration
             $table->mediumText('abstract')->nullable();
             $table->longtext('body')->nullable();
             $table->string('picture',128)->nullable();
-            $table->string('image',128)->nullable();
 
             //Relation - Relaciones 
             //Si eliminamos un usuario se eliminan los post pertenecientes al usuario

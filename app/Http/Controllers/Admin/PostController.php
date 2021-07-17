@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
@@ -63,10 +64,32 @@ class PostController extends Controller
         
         $request-> request->add(['post_code' => $post_code]);
 
+        //picture
+        //Gestiona el guardado de la imagen principal del post
+        if($request->hasFile('picture_up'))
+        {
+            // Se busca el nombre del archivo junto con la extensión que se envio desde el formulario.
+            $pictureNameWithExt = $request->file('picture_up')->getClientOriginalName();
+            // Se obtine solo el nombre del archivo
+            $pictureName = pathinfo($pictureNameWithExt, PATHINFO_FILENAME);
+            // Se obtine solo la extensión del archivo
+            $extension = $request->file('picture_up')->getClientOriginalExtension();
+            // Se crea el nombre para guardarlo
+            $pictureNameToStore = $pictureName.'_'.time().'.'.$extension;
+            // Sube y guarda la imagen
+            $path = $request->file('picture_up')->storeAs('public/img/picturePost', $pictureNameToStore);
+        } else
+        {
+            // Si no se sube imagen coloca pone este nombre.
+            $pictureNameToStore = 'NoPicture.jpg';
+        }
+
+        //Se adjunta al request el campo file y image con el nombre que hemos creado.
+        $request-> request->add(['picture'=>$pictureNameToStore]);
+
         //Salva los datos
-        //dd($request->all());  
         $post = Post::create($request->all());//Acepta datos masivos, pero en PostStoreRequest y en el modelo Post hay control de los campos que se necesitan 
-        //
+        
         //Tags
         $post->tags()->attach($request->get('tags')); 
         
@@ -112,7 +135,33 @@ class PostController extends Controller
     public function update(PostUpdateRequest $request, $id)
     {
         $post = Post::find($id);
-        
+
+        //picture
+        //Gestiona la actualización de la imagen de la entrada eliminando la anterior si llega a existir.
+        if($request->hasFile('picture_up'))
+        {
+            // Elimina la anterior imagen de la entrada
+            Storage::delete('public/img/picturePost/'.$post->picture);
+            // Se busca el nombre del archivo junto con la extensión que se envio desde el formulario. 
+            $pictureNameWithExt = $request->file('picture_up')->getClientOriginalName();
+            // Se obtine solo el nombre del archivo
+            $pictureName = pathinfo($pictureNameWithExt, PATHINFO_FILENAME);
+            // Se obtine solo la extensión del archivo
+            $extension = $request->file('picture_up')->getClientOriginalExtension();
+            // Crea el nombre para guardarlo
+            $pictureNameToStore = $pictureName.'_'.time().'.'.$extension;
+            // Sube y guarda la imagen nueva
+            $path = $request->file('picture_up')->storeAs('public/img/picturePost', $pictureNameToStore);
+        } else
+        {
+            //Si no se sube imagen mantiene el nombre de la anterior imagen.
+            $pictureNameToStore = $post->picture;
+        }
+
+        //Se adjunta al request el campo file y image con el nombre que hemos creado.
+        $request-> request->add(['picture'=>$pictureNameToStore]);
+
+        //Salva los datos
         $post->fill($request->all())->save();
         
         //Sincroniza las etiquetas de la entrada Tags
@@ -133,7 +182,16 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id)->delete();
+        $post = Post::find($id);
+
+        //Borra la imagen principal que tiene una Entrada
+        if($post->picture != 'noimage.jpg')
+            {
+            Storage::delete('public/img/picturePost/'.$post->picture);
+            };
+        
+        $post->delete();
+
         return back()->with('info','Eliminado correctamente');
     }
 }
