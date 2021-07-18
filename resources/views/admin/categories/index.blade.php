@@ -12,7 +12,7 @@
 <div class="col-lg-8">
     <div class="card text-white bg-dark">
         <div class="card-body">
-        <h2 class="mb-3">Categorías</h1>
+        <h2 class="mb-3">Categorías o secciones</h1>
         <hr class="mb-4">
         <div class="row">
             

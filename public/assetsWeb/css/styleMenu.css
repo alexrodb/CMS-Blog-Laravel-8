@@ -18,7 +18,7 @@ a {
 /* Enlaces del NAV */
 /* ------------------------- */
 .menu {
-	background: #232F3E;
+	background: #212121;
 	padding: 5px 0;
 	margin-bottom: 20px;
 }
@@ -84,17 +84,18 @@ a {
 	font-weight: bold;
 }
 
-.menu .contenedor-enlaces-nav .enlaces a {
-	color: #ccc;
-	border: 1px solid transparent;
-	padding: 7px;
-	border-radius: 3px;
-	font-size: 14px;
+.menu .contenedor-enlaces-nav .enlaces  {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
-
-.menu .contenedor-enlaces-nav .enlaces a:hover {
-	border: 1px solid rgba(255,255,255,.4);
+.menu .contenedor-enlaces-nav .enlaces a {
+	width: 36px;
+	height: 36px;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 
 /* ------------------------- */
@@ -141,7 +142,7 @@ a {
 /* ------------------------- */
 
 .grid .btn-regresar {
-	background: #232F3E;
+	background: #212121;
 	color: #fff;
 	border: none;
 	padding: 10px;
@@ -180,7 +181,7 @@ a {
 }
 
 .grid .categorias a:hover {
-	color: #E47911;
+	color: #730E0D;
 	font-weight: bold;
 }
 
@@ -229,13 +230,13 @@ a {
 }
 
 .grid .enlaces-subcategoria a:hover {
-	color: #E47911;
+	color: #730E0D;
 }
 
 .grid .subtitulo {
 	font-size: 18px;
 	font-weight: normal;
-	color: #E47911;
+	color: #730E0D;
 	padding: 10px 20px;
 }
 
@@ -284,7 +285,7 @@ a {
 		justify-content: flex-start;
 		position: fixed;
 		left: 0;
-		background: #232F3F;
+		background: #212121;
 		height: 100vh;
 		width: 80%;
 		z-index: 2000;

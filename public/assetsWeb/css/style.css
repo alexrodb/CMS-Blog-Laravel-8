@@ -28,6 +28,7 @@ body {
     font-size: 1em;
     overflow: visible;
     overflow-x: hidden;
+    color: #212121;
 }
 header{
     position: fixed;
@@ -39,7 +40,7 @@ header{
 }
 .container{
     margin-top: 5em;
-    display: flex;
+    /*display: flex; */ 
     flex-wrap: wrap;
     flex-direction: row;
 }
@@ -60,19 +61,27 @@ p{
 }
 
 
-
+.logo { 
+    margin: 0 auto;
+    border-bottom: 2px solid #212121;
+    position: relative;
+    height: 95px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
 .titlecategory {font-size: 0.95em; font-weight: 400;}
 .titlepost {font-size: 1.1em; font-weight: 600; text-transform: uppercase;}
 .pictureArticle {margin: 1.5em;}
-.textresumen {font-size: 1em; text-align: justify}
+.textresumen {font-size: 1em; text-align: justify; color: #424242; }
 
 
 .bodyAbstract{
     font-style: italic;
     font-size: 1em;
     text-align: justify;
-    line-height: 1.8em;
-
+    line-height: 2em;
+    color: #616161;
 }
 .bodyAbstract p:not(:first-of-type) {text-indent: 2em;}
 
@@ -83,7 +92,11 @@ p{
     margin-bottom: 1.5em;
     text-align: justify;
 }
-
+.blog-post .blog-post-title{
+    text-align: center;
+    font-size: 1.9em;
+    line-height: 2em;
+}
 .bodyPost .textPost::first-letter {
     font-family: 'Parisienne', cursive;
     float: left;

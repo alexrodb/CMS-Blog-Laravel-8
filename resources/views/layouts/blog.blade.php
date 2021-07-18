@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <meta name="description" content="Blog CMS">
 
-        <link href="{{ asset('assetsWeb/plugins/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assetsWeb/plugins/css/scss/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/styleMenu.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/style.css') }}" rel="stylesheet">
     
@@ -23,17 +23,23 @@
 
             <div class="contenedor contenedor-enlaces-nav">
                 <div class="btn-departamentos" id="btn-departamentos">
-                    <p>Todas las <span>Categorias</span></p>
+                    <p>Todas las <span>Secciones</span></p>
                     <i class="fas fa-caret-down"></i>
                 </div>
-
+                
                 <div class="enlaces">
-                    <a href="#">Cuenta</a>
-                    <a href="#">Promociones</a>
-                    <a href="#">Mesa de Regalos</a>
-                    <a href="#">Ayuda</a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/paypal.svg') }}"  alt="Paypal"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/Instagram.svg') }}" class="img-fluid" alt="Instagram"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/Facebook.svg') }}" class="img-fluid" alt="Facebook"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/Twitter.svg') }}" class="img-fluid" alt="Twitter"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/Youtube.svg') }}" class="img-fluid" alt="Youtube"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/Telegram.svg') }}" class="img-fluid" alt="Telegram"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/twitch.svg') }}" class="img-fluid" alt="Twitch"></a>
+                    <a href="#"><img src="{{ asset('assetsWeb/images/svg/discord.svg') }}" class="img-fluid" alt="discord"></a>
                 </div>
+                
             </div>
+            
 
             <div class="contenedor contenedor-grid">
                 <div class="grid" id="grid">
@@ -281,8 +287,13 @@
                 </div>
             </div>
         </nav>
-        </header>    
+        </header>
+
         <main  class="container">
+            <div  class="logo d-flex flex-row  justify-content-center align-items-center mb-3">
+                <a href="{{ route('blog') }}"><img src="{{ asset('assetsWeb/images/logo.svg') }}" class="img-fluid" alt="Logo CMS BLOG"></a>
+                
+            </div>
         @yield('content')
         </main>
 

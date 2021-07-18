@@ -2,10 +2,10 @@
 @section('content')
 <div class="row g-5">
     
-    <div class="col-md-9">
+    <div class="col-lg-8 col-md-12">
 
-    <article class="blog-post">
-    <h1 class="blog-post-title">{{ $post->name }}</h1>
+    <article class="blog-post mt-4">
+    <h1 class="blog-post-title mb-2">{{ $post->name }}</h1>
         <div class="d-flex justify-content-between align-items-center">
             <div class="p-2">
                 <p class="blog-post-meta">January 1, 2021. Publicado por Alex</a>
@@ -23,7 +23,7 @@
         @endif
         </div>
 
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center mt-2 mb-4">
         <h6 class="p-2 fw-bolder">Resumen:</h6>
         <p class="p-2 bodyAbstract">{{ $post->abstract }}</p>
         </div>
@@ -44,7 +44,7 @@
     </article>
 
     </div>
-    <aside class="col-md-3">
+    <aside class="col-lg-4 col-md-12">
     <div class="d-flex flex-column justify-content-center align-items-center">   
     <h6 class="P-2">Últimas entradas en esta Categoría:</h6>
         @foreach($LastCategoryEntries as $LastCategoryEntrie)

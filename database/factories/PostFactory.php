@@ -36,7 +36,6 @@ class PostFactory extends Factory
             'abstract' => $this->faker->text(350), // crea un texto de 350 caracteres.
             'body' => $this->faker->text(2000), // crea un texto de 2000 caracteres.
             'picture'=> rand(1,10).'.jpg',
-            'image'=> rand(1,10).'.jpg',
         ];
     }
 }
