@@ -1,5 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+/* root */
+:root {
+
+    --color-white:    #fff    ;
+    --color-gray-50:  #FAFAFA ;
+    --color-gray-100: #F5F5F5 ;
+    --color-gray-200: #EEEEEE ;
+    --color-gray-300: #E0E0E0 ;
+    --color-gray-400: #BDBDBD ;
+    --color-gray-500: #9E9E9E ;
+    --color-gray-600: #757575 ;
+    --color-gray-700: #616161 ;
+    --color-gray-800: #424242 ;
+    --color-gray-900: #212121 ;
+    --color-gray-1000:#191919 ;
+    --color-black:    #000    ;
+
+    /* colors */
+    --color-yellow: #FEDC04;
+    --color-blue: #1C56E8;
+    --color-red: #E91B1E;
+
+    /* theme */
+    --color-primary: var(--color-red);
+    --color-secondary: var(--color-blue);
+    --color-warning: var(--color-yellow);
+
+    /* bgs */
+    --bg-color-primary: white;
+    --bg-color-secondary: black;
+
+    /* fonts */
+    --color-font-100: white;
+
+    --color-font-150: #F2F2F2;
+    --color-font-200: #DDD;
+    --color-font-250: #C4C4C4;
+
+    --color-font-300 : #AAA;
+    --color-font-350 : #A7A7A7;
+
+    --color-font-400: #9D9D9D;
+    --color-font-500: #707070;
+
+    --color-font-900: black;
+}
+
 
 *{
     padding: 0;
@@ -22,10 +69,10 @@
 }
 
 body { 
-    font-family: 'Roboto', sans-serif;
+    font-family: Serif, 'FontCMSBLOGSerif-Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1.125em;
     overflow: visible;
     overflow-x: hidden;
     color: #212121;
@@ -48,8 +95,6 @@ aside{
     position: inherit;
 }
 h1 {
-    text-transform: uppercase;
-    font-size: 1.8em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
@@ -60,7 +105,6 @@ p{
     margin-bottom: 0em;
 }
 
-
 .logo { 
     margin: 0 auto;
     border-bottom: 2px solid #212121;
@@ -70,32 +114,33 @@ p{
     width: 100%;
     text-align: center;
 }
-.titlecategory {font-size: 0.95em; font-weight: 400;}
+.titlecategory { font-family: 'FontCMSBLOGSerif-BoldItalic'; font-size: 0.95em; font-weight: 400;}
 .titlepost {font-size: 1.1em; font-weight: 600; text-transform: uppercase;}
+.colorLinkCategory {color: var(--color-primary); font-size: 1.5em;}
 .pictureArticle {margin: 1.5em;}
 .textresumen {font-size: 1em; text-align: justify; color: #424242; }
 
 
 .bodyAbstract{
     font-style: italic;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: justify;
     line-height: 2em;
-    color: #616161;
+    color: var(--color-font-500);
 }
 .bodyAbstract p:not(:first-of-type) {text-indent: 2em;}
 
 .bodyPost{
     font-size: 1.2em;
-    line-height: 1.5em;
+    line-height: 1.77em;
     margin-top: 0.6em;
     margin-bottom: 1.5em;
     text-align: justify;
 }
 .blog-post .blog-post-title{
-    text-align: center;
-    font-size: 1.9em;
-    line-height: 2em;
+    font-family:'FontCMSBLOGSerif-ExtraBold' ;
+    font-size: 2.375em;
+    line-height: 1em;
 }
 .bodyPost .textPost::first-letter {
     font-family: 'Parisienne', cursive;
@@ -106,3 +151,26 @@ p{
 }
 
 .bodyPost p:not(:first-of-type) {text-indent: 2em;}
+
+.subtitulocolor{
+    font-family: 'FontCMSBLOGSerif-Bold';
+    font-size: 1.3em;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    margin: 20px 0;
+    background: var(--color-gray-900);
+    padding: 5px 9.5px 5px 9.5px;
+    line-height: 26px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    top: 1rem;
+
+}
+
+a {
+    color: var(--color-font-500);
+}
+
+a:hover {
+    color: var(--color-primary);
+}

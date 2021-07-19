@@ -8,6 +8,55 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <meta name="description" content="Blog CMS">
 
+        <style>
+        /* FontCMSBLOG*/
+        @font-face {
+                font-family: 'FontCMSBLOGSans-Regular';
+                font-display: swap;
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/Sans/WOFF2/FontCMSBLOGSans-Regular.woff2')}}') format('woff2');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/Sans/WOFF/FontCMSBLOGSans-Regular.woff')}}') format('woff');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/Sans/TTF/FontCMSBLOGSans-Regular.ttf')}}') format('truetype');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/Sans/OTF/FontCMSBLOGSans-Regular.otf')}}') format('truetype');
+                
+            } 
+        @font-face {
+                font-family: 'FontCMSBLOGSerif-Regular';
+                font-display: swap;
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF2/FontCMSBLOGSerif-Regular.woff2')}}') format('woff2');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF/FontCMSBLOGSerif-Regular.woff')}}') format('woff');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/TTF/FontCMSBLOGSerif-Regular.ttf')}}') format('truetype');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/OTF/FontCMSBLOGSerif-Regular.otf')}}') format('truetype');
+                
+            }
+        @font-face {
+                font-family: 'FontCMSBLOGSerif-Bold';
+                font-display: swap;
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF2/FontCMSBLOGSerif-Bold.woff2')}}') format('woff2');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF/FontCMSBLOGSerif-Bold.woff')}}') format('woff');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/TTF/FontCMSBLOGSerif-Bold.ttf')}}') format('truetype');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/OTF/FontCMSBLOGSerif-Bold.otf')}}') format('truetype');
+                
+        }
+        @font-face {
+                font-family: 'FontCMSBLOGSerif-ExtraBold';
+                font-display: swap;
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF2/FontCMSBLOGSerif-ExtraBold.woff2')}}') format('woff2');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/WOFF/FontCMSBLOGSerif-ExtraBold.woff')}}') format('woff');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/TTF/FontCMSBLOGSerif-ExtraBold.ttf')}}') format('truetype');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif/OTF/FontCMSBLOGSerif-ExtraBold.otf')}}') format('truetype');
+                
+            }
+        @font-face {
+                font-family: 'FontCMSBLOGSerif-BoldItalic';
+                font-display: swap;
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif-italic/WOFF2/FontCMSBLOGSerif-BoldItalic.woff2')}}') format('woff2');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif-italic/WOFF/FontCMSBLOGSerif-BoldItalic.woff')}}') format('woff');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif-italic/TTF/FontCMSBLOGSerif-BoldItalic.ttf')}}') format('truetype');
+                src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif-italic/OTF/FontCMSBLOGSerif-BoldItalic.otf')}}') format('truetype');
+                
+            }    
+        </style> 
+
         <link href="{{ asset('assetsWeb/plugins/css/scss/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/styleMenu.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/style.css') }}" rel="stylesheet">

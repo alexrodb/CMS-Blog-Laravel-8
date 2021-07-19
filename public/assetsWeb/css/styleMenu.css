@@ -21,6 +21,7 @@ a {
 	background: #212121;
 	padding: 5px 0;
 	margin-bottom: 20px;
+	font-family: 'FontCMSBLOGSans-Regular';
 }
 
 .menu .contenedor-botones-menu {
@@ -80,7 +81,7 @@ a {
 
 .menu .btn-departamentos span {
 	display: block;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
@@ -170,7 +171,7 @@ a {
 
 .grid .categorias a {
 	color: #000;
-	font-size: 14px;
+	font-size: 18px;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px;
@@ -225,7 +226,7 @@ a {
 .grid .enlaces-subcategoria a {
 	color: #000;
 	display: block;
-	font-size: 14px;
+	font-size: 18px;
 	padding: 10px 20px;
 }
 
