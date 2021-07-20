@@ -25,7 +25,7 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->unique()->sentence(5);
+        $title = $this->faker->unique()->sentence(10);
 
         return [
             'user_id'=> User::all()->random()->id,
@@ -33,9 +33,12 @@ class PostFactory extends Factory
             'name' => $title, //oración de cinco palabras
             'slug' => Str::slug($title), //convierte un string a slug
             'status'=> $this->faker->randomElement(['DRAFT','PUBLISHED']),
-            'abstract' => $this->faker->text(350), // crea un texto de 350 caracteres.
+            'abstract' => $this->faker->text(400), // crea un texto de 350 caracteres.
             'body' => $this->faker->text(2000), // crea un texto de 2000 caracteres.
             'picture'=> rand(1,10).'.jpg',
+            'title_picture' => $this->faker->text(60),
+            'source_picture' => $this->faker->text(15),
+
         ];
     }
 }
