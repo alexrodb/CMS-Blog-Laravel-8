@@ -144,6 +144,15 @@ p{
     font-size: 2.1em;
     line-height: 1em;
 }
+
+.fontExtraBold{
+    
+    font-family:'FontCMSBLOGSerif-ExtraBold' ;
+}
+
+.date p::first-letter {
+    text-transform: uppercase;
+}
 .bodyPost .textPost::first-letter {
     font-family: 'Parisienne', cursive;
     float: left;

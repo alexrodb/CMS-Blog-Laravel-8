@@ -39,10 +39,36 @@
         </div>
         
         <div class="bodyPost"> 
-
         <div class="textPost">{!! $post->body!!}</div>
+        </div>
+
+        <div class="d-flex flex-row justify-content-between mb-5">
+        <div class="mb-3">      
+            <div class="d-flex flex-row justify-content-start align-items-center">
+                <div  class="mt-1 py-2">
+                    <span class="material-icons-two-tone ">date_range</span>
+                </div>
+                <div class="date px-2">
+                    <span class="fontExtraBold">Publicado:</span>
+                    <p>{{ $post->created_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+        <div class="d-flex flex-row justify-content-start align-items-center">
+            <div  class="mt-1 py-2">
+                <span class="material-icons-two-tone ">date_range</span>
+            </div>
+            <div class="date px-2">
+                <span class="fontExtraBold">Actualizado:</span> 
+                <p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p></div>
+            </div>
+        </div>           
+        
 
         </div>
+        
+        
 
         <h4>Etiquetas:</h4>
         
