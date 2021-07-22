@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->unique()->sentence(4);  
+        $title = $this->faker->unique()->sentence(2);  
         
         return [   
             'name' => $title, //oración de cuatro palabras,

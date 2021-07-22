@@ -47,7 +47,6 @@
     --color-font-900: black;
 }
 
-
 *{
     padding: 0;
     margin: 0;
@@ -120,12 +119,38 @@ p{
 .pictureArticle {margin-top: 1.5em;}
 .title-photo{font: 0.9em 'FontCMSBLOGSerif-Regular'; color: var(--color-gray-700)}
 .credito-image{font: 0.9em 'FontCMSBLOGSerif-Bold'; color: var(--color-gray-700)}
-.textresumen {font-size: 1em; text-align: justify; color: var(--color-gray-700); }
+.textresumen {font-size: 1em; text-align: justify; color: var(--color-gray-700);}
+
+.card-title {
+    font-family: 'FontCMSBLOGSerif-Bold';
+    font-size: 1.15em;
+    line-height: 1.2;
+}
+
+.card-titlecategory{
+    font-family: 'FontCMSBLOGSans-Medium'; font-size: 0.95em; font-weight: 400;
+    
+}
+.card-titlecategory a {
+    color: var(--color-primary);
+}
+.card-Abstract {
+    font-family: 'FontCMSBLOGSans-Regular';
+    font-size: 0.9em;
+    line-height: 1.2;
+}
+.card-time {
+    font-family: 'FontCMSBLOGSans-Regular';
+    font-size: 0.8em;
+}
+.card-time p::first-letter {
+    text-transform: uppercase;
+}
 
 
 .bodyAbstract{
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1.15em;
     text-align: justify;
     line-height: 2em;
     color: var(--color-gray-700);
@@ -133,7 +158,7 @@ p{
 .bodyAbstract p:not(:first-of-type) {text-indent: 2em;}
 
 .bodyPost{
-    font-size: 1.2em;
+    font-size: 1.25em;
     line-height: 1.77em;
     margin-top: 0.6em;
     margin-bottom: 1.5em;
@@ -144,6 +169,7 @@ p{
     font-size: 2.1em;
     line-height: 1em;
 }
+
 
 .fontExtraBold{
     
@@ -162,6 +188,12 @@ p{
 }
 
 .bodyPost p:not(:first-of-type) {text-indent: 2em;}
+
+.datetime {
+    background-color: var(--color-gray-100);
+    padding: 1.1em;
+    border: 3px dotted var(--color-gray-700);
+}
 
 .subtitulocolor{
     font-family: 'FontCMSBLOGSerif-Bold';
@@ -214,4 +246,13 @@ a:hover {
 
 .rotate-icon{
     transform: rotate(135deg);
+}
+
+.reflect-icon{
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+.card-body{
+    padding: 0;
 }

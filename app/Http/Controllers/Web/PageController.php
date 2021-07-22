@@ -11,7 +11,7 @@ use App\Models\Category;
 class PageController extends Controller
 {
     public function blog(){
-        $posts = Post::orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(6);//Enlista todos los post
+        $posts = Post::orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);//Enlista todos los post
         return view('web.posts', compact('posts'));
         
     }
@@ -19,7 +19,7 @@ class PageController extends Controller
     public function category($slug){
         $category = Category::where('slug', $slug)->pluck('id')->first(); //busca el id de la categoria
         $posts = Post::where('category_id',$category) //Enlista todos los que tengan relación con esta categoría
-        ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(6);
+        ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);
         return view('web.posts', compact('posts'));
     }
 
@@ -27,7 +27,7 @@ class PageController extends Controller
         $posts = Post::whereHas('tags', function($query) use($slug){
             $query->where('slug',$slug);
         }) //Enlista todos los post que tengan etiquetas siempre y cuando estas etiquetas tengan el mismo slug que se esta usando
-        ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(6);
+        ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);
         return view('web.posts', compact('posts'));
     }
 

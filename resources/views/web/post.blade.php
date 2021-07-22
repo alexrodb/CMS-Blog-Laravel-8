@@ -34,7 +34,7 @@
         @endif
 
         <div class="d-flex justify-content-center align-items-center mt-2 mb-4">
-        <h6 class="p-2 fw-bolder">Resumen:</h6>
+        <h5 class="p-2 fw-bolder">Resumen:</h5>
         <p class="p-2 bodyAbstract">{{ $post->abstract }}</p>
         </div>
         
@@ -42,41 +42,46 @@
         <div class="textPost">{!! $post->body!!}</div>
         </div>
 
-        <div class="d-flex flex-row justify-content-between mb-5">
+        <div class="d-flex flex-row justify-content-between mb-3">
+            <div class="mb-2 datetime">      
+                <div class="d-flex flex-row justify-content-start align-items-center">
+                    <div  class="mt-1 py-2">
+                        <span class="material-icons-two-tone ">date_range</span>
+                    </div>
+                    <div class="date px-2">
+                        <span class="fontExtraBold"> Contenido publicado:</span>
+                        <p>{{ $post->created_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2 datetime">
+                <div class="d-flex flex-row justify-content-start align-items-center">
+                    <div  class="mt-1 py-2">
+                        <span class="material-icons-two-tone ">date_range</span>
+                    </div>
+                    <div class="date px-2">
+                        <span class="fontExtraBold">Contenido actualizado:</span> 
+                        <p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p></div>
+                    </div>
+                </div>           
+            </div>
+
         <div class="mb-3">      
             <div class="d-flex flex-row justify-content-start align-items-center">
                 <div  class="mt-1 py-2">
-                    <span class="material-icons-two-tone ">date_range</span>
+                    <span class="material-icons-two-tone reflect-icon">loyalty</span>
                 </div>
                 <div class="date px-2">
-                    <span class="fontExtraBold">Publicado:</span>
-                    <p>{{ $post->created_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p>
+                    @foreach($post->tags as $tag)
+                        <a class="btn btn-dark fw-bolder my-2" href="{{ route('tag', $tag->slug)}}" role="button">{{ $tag->name }}</a>
+                    @endforeach
                 </div>
             </div>
         </div>
-        <div>
-        <div class="d-flex flex-row justify-content-start align-items-center">
-            <div  class="mt-1 py-2">
-                <span class="material-icons-two-tone ">date_range</span>
-            </div>
-            <div class="date px-2">
-                <span class="fontExtraBold">Actualizado:</span> 
-                <p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p></div>
-            </div>
-        </div>           
-        
-
-        </div>
-        
-        
-
-        <h4>Etiquetas:</h4>
-        
-            @foreach($post->tags as $tag)
-            <a class="btn btn-dark fw-bolder" href="{{ route('tag', $tag->slug)}}" role="button">{{ $tag->name }}</a>
-            @endforeach
         
     </article>
+
+
 
     </div>
     <aside class="col-lg-4 col-md-12">
