@@ -135,13 +135,17 @@ p{
     color: var(--color-primary);
 }
 .card-Abstract {
-    font-family: 'FontCMSBLOGSans-Regular';
-    font-size: 0.9em;
+    font-family: 'FontCMSBLOGSerif-Regular';
+    font-size: 1em;
     line-height: 1.2;
 }
 .card-time {
     font-family: 'FontCMSBLOGSans-Regular';
-    font-size: 0.8em;
+    font-size: 0.9em;
+}
+.card-time a {
+    font-family: 'FontCMSBLOGSans-Regular';
+    font-size: 0.9em;
 }
 .card-time p::first-letter {
     text-transform: uppercase;
@@ -191,8 +195,7 @@ p{
 
 .datetime {
     background-color: var(--color-gray-100);
-    padding: 1.1em;
-    border: 3px dotted var(--color-gray-700);
+    padding: 1em;
 }
 
 .subtitulocolor{
@@ -255,4 +258,19 @@ a:hover {
 
 .card-body{
     padding: 0;
+
+}
+.read-more{
+    font-family: 'FontCMSBLOGSans-Regular';
+    font-size: 0.9em;
+}
+.card-footer{
+    border-top: 0;
+    background-color: #fff;
+    padding: 0;
+}
+
+.container-footer{
+    width: 100vh;
+    padding:1em;
 }

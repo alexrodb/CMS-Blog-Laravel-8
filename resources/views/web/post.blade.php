@@ -2,7 +2,7 @@
 @section('content')
 <div class="row g-5">
     
-    <div class="col-lg-8 col-md-12">
+    <div class="col-lg-9 col-md-12">
 
     <article class="blog-post mt-3">
         <div class="d-flex flex-row justify-content-start align-items-center">
@@ -81,23 +81,32 @@
         
     </article>
 
-
-
     </div>
-    <aside class="col-lg-4 col-md-12">
+    <aside class="col-lg-3 col-md-12">
     <div class="d-flex flex-column justify-content-center align-items-center">   
-    <h6 class="subtitulocolor">Últimas entradas en esta Categoría</h6>
+    <h6 class="subtitulocolor">Últimas entradas en esta categoría</h6>
         @foreach($LastCategoryEntries as $LastCategoryEntrie)
-        <div class="card mb-3" style="max-width: 25rem;">
-        <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$LastCategoryEntrie->picture) }}" class="card-img-top" alt="{{ $post->post_image }}"></a>
-            <div class="card-body">
-                <h6 class="card-title">{{ $LastCategoryEntrie->name }}</h6>
+        <div class="col">
+            <div class="card border-0 h-100 mb-4 p-3">
+                <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$LastCategoryEntrie->picture) }}" class="card-img-top" alt="{{ $LastCategoryEntrie->post_picture }}"></a>
+                <div class="card-body">
+                    <h3 class="card-title mt-3">{{ $LastCategoryEntrie->name }}</h3>
+                    <p class="card-Abstract mt-3 mb-3">{{ $LastCategoryEntrie->abstract }}</p>
+                </div>
+                <div class="card-footer ">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                        <div class="d-flex flex-row card-time">
+                            <div><span class="material-icons-two-tone mt-1">date_range</span></div>
+                            <div class="card-date mt-1"><p>{{ $LastCategoryEntrie->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY.') }}</p></div>
+                        </div>
+                        <div><a class="read-more mt-2" href="{{route('post',$LastCategoryEntrie->slug)}}">Seguir leyendo...</a></div>
+                    </div>
+                </div>  
             </div>
         </div>
         @endforeach
         </div>    
     </aside>
-
 
 </div>
 @endsection

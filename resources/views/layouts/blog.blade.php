@@ -372,14 +372,22 @@
         @yield('content')
         </main>
 
-        <footer class="text-muted py-5">
-        
-        </footer>
+
         <script src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/bootstrap.min.js') }}"></script>
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
         @yield('scripts')
 
+        <footer class="footer mt-auto bg-dark text-white">
+            <div class="container-footer">
+                <div class="d-flex flex-column">
+                    <div class="">Flex item 1</div>
+                    <div class="">Flex item 2</div>
+                </div>
+            </div>
+
+        </footer>
     </body>
+    
 </html>
