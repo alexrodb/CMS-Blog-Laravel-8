@@ -14,7 +14,7 @@
         <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class="d-flex flex-row card-time">
                     <div><span class="material-icons-two-tone mt-1">date_range</span></div>
-                    <div class="card-date mt-1"><p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY.') }}</p></div>
+                    <div class="mt-1"><p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY.') }}</p></div>
                 </div>
                 <div><a class="read-more mt-2" href="{{route('post',$post->slug)}}">Seguir leyendo...</a></div>
             </div>

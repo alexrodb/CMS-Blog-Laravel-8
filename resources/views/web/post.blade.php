@@ -49,7 +49,7 @@
                         <span class="material-icons-two-tone ">date_range</span>
                     </div>
                     <div class="date px-2">
-                        <span class="fontExtraBold"> Contenido publicado:</span>
+                        <span class="fontExtraBold">Publicado:</span>
                         <p>{{ $post->created_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         <span class="material-icons-two-tone ">date_range</span>
                     </div>
                     <div class="date px-2">
-                        <span class="fontExtraBold">Contenido actualizado:</span> 
+                        <span class="fontExtraBold">Última actualización:</span> 
                         <p>{{ $post->updated_at->isoFormat('dddd, D [de] MMMM [de] YYYY, h:mm:ss a') }}</p></div>
                     </div>
                 </div>           

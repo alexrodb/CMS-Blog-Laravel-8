@@ -115,7 +115,6 @@
                 
             </div>
             
-
             <div class="contenedor contenedor-grid">
                 <div class="grid" id="grid">
                     <div class="categorias">
@@ -364,14 +363,28 @@
         </nav>
         </header>
 
-        <main  class="container">
-            <div  class="logo d-flex flex-row  justify-content-center align-items-center mb-3">
-                <a href="{{ route('blog') }}"><img src="{{ asset('assetsWeb/images/logo.svg') }}" class="img-fluid" alt="Logo CMS BLOG"></a>
-                
+        <main class="container mtopem">
+            <div class="row logo mt-4 mb-5">
+                <div class=" col-md-4 col-xs-12p-0 p-0">
+                    <div class="d-flex flex-row justify-content-start align-items-center logoheight">
+                        <div class="logo-time"><p>{{ $date->isoFormat('dddd, D [de] MMMM [de] YYYY. h:mm a')}}</p></div>
+                    </div>
+                </div>
+                <div class=" col-md-4 col-xs-12 p-0">
+                    <div class="d-flex flex-row justify-content-center align-items-center logoheight">
+                        <div>
+                            <a href="{{ route('blog') }}"><img src="{{ asset('assetsWeb/images/logo.svg') }}" class="img-fluid" alt="Logo CMS BLOG"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-4 col-xs-12 p-0">
+                    <div class="d-flex flex-row justify-content-end align-items-center logoheight">
+                    <div><p>Lorem ipsum</p></div>
+                    </div>
+                </div>
             </div>
         @yield('content')
         </main>
-
 
         <script src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>
@@ -379,14 +392,19 @@
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
         @yield('scripts')
 
-        <footer class="footer mt-auto bg-dark text-white">
+        <footer class="d-flex footer mt-auto bg-dark text-white " >
             <div class="container-footer">
                 <div class="d-flex flex-column">
-                    <div class="">Flex item 1</div>
-                    <div class="">Flex item 2</div>
+                    <div class="mainFooter_container">
+                        <div class="container">Contenido</div>
+                    </div>
+                    <div class="mainFooter_subcontainer">
+                        <div class="d-flex flex-row justify-content-center">
+                        <div class="">Se prohíbe la reproducción total o parcial de cualquiera de los contenidos que aquí aparezca, así como su traducción a cualquier idioma sin autorización escrita por su titular.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </footer>
     </body>
     

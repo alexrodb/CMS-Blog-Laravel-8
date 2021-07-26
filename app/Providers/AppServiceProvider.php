@@ -25,12 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Pagínación Bootstrap
         Paginator::useBootstrap();
         // Carbon fechas en español
         Carbon::setUTF8(true);
         Carbon::setLocale(config('app.locale'));
         setlocale(LC_TIME, config('app.locale'));
-
     }
 }
