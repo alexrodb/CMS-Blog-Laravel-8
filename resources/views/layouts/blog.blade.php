@@ -229,6 +229,7 @@
                         </div>
 
                         <div class="subcategoria" data-categoria="hogar-y-cocina">
+
                             <div class="enlaces-subcategoria">
                                 <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
                                 <h3 class="subtitulo">Hogar y Cocina</h3>
@@ -392,11 +393,58 @@
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
         @yield('scripts')
 
-        <footer class="d-flex footer mt-auto bg-dark text-white " >
+        <footer class="d-flex footer mt-5 bg-dark text-white" >
             <div class="container-footer">
                 <div class="d-flex flex-column">
                     <div class="mainFooter_container">
-                        <div class="container">Contenido</div>
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-3">
+                            <ol class="">
+                                <li >Cras justo odio</li>
+                                <li >Cras justo odio</li>
+                                <li >Cras justo odio</li>
+                                <li >Cras justo odio</li>
+                                <li >Cras justo odio</li>
+                                
+                            </ol>
+
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3">.lorem</div>
+                            <div class="col-6 col-sm-6 col-md-3">
+                                <h4>Sobre nosotros</h4>
+                                <ul>
+                                    <li>Elemento lista 1</li>
+                                    <li>Elemento lista 2</li>
+                                    <li>Elemento lista 3</li>
+                                </ul>
+                            </div>
+
+
+
+                            <div class="col-12 col-sm-12 col-md-3">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <div class="d-flex flex-row justify-content-center align-items-center logoheight">
+                                        <div>
+                                            <a href="{{ route('blog') }}"><img src="{{ asset('assetsWeb/images/logo.svg') }}" class="img-fluid" alt="Logo CMS BLOG"></a>
+                                        </div>
+                                    </div>
+                                    <div><p>¡Síguenos en nuestras Redes Sociales!</p></div>
+                                    <div class="d-flex flex-row justify-content-center align-items-center enlaces">
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/paypal.svg') }}"  alt="Paypal"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/Instagram.svg') }}" class="img-fluid" alt="Instagram"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/Facebook.svg') }}" class="img-fluid" alt="Facebook"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/Twitter.svg') }}" class="img-fluid" alt="Twitter"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/Youtube.svg') }}" class="img-fluid" alt="Youtube"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/Telegram.svg') }}" class="img-fluid" alt="Telegram"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/twitch.svg') }}" class="img-fluid" alt="Twitch"></a>
+                                        <a href="#"><img src="{{ asset('assetsWeb/images/svg/discord.svg') }}" class="img-fluid" alt="discord"></a>
+                                    </div>
+                                    <div><p class="mt-3 textmainFooter">¿Ya conoces todas nuestras redes sociales? Si la respuesta es no, te invitamos a que nos sigas en ellas y te enteres de lo último en noticias y curiosidades de nuestra serie favorita.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                     <div class="mainFooter_subcontainer">
                         <div class="d-flex flex-row justify-content-center">

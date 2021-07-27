@@ -296,3 +296,18 @@ a:hover {
 .logo-time p::first-letter {
     text-transform: uppercase;
 }
+
+.container-footer .mainFooter_container .enlaces a {
+	width: 25px;
+	height: 25px;
+	margin-right: 3.5px;
+	margin-left: 3.5px;
+}
+
+.container-footer .mainFooter_container .textmainFooter
+{
+    font-size: 0.8em;
+    font-family: 'FontCMSBLOGSans-Regular';
+    line-height: 1.5;
+    text-align: justify;
+}
