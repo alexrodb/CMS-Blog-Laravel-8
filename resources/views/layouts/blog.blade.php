@@ -380,7 +380,12 @@
                 </div>
                 <div class=" col-md-4 col-xs-12 p-0">
                     <div class="d-flex flex-row justify-content-end align-items-center logoheight">
-                    <div><p>Lorem ipsum</p></div>
+                        <div>
+                            <button class="switch" id="switch">
+                                <span><i class="fas fa-sun"></i></span>
+                                <span><i class="fas fa-moon"></i></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -388,6 +393,7 @@
         </main>
 
         <script src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
+        <script src="{{ asset('assetsWeb/js/switch.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/bootstrap.min.js') }}"></script>
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
@@ -408,7 +414,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -418,7 +424,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -428,7 +434,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -438,7 +444,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -448,7 +454,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -464,7 +470,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -474,7 +480,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -484,7 +490,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -494,7 +500,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -504,7 +510,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -520,7 +526,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">¿De Dónde Venimos?</a>
@@ -530,7 +536,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">¿Quiénes Somos?</a>
@@ -540,7 +546,7 @@
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
                                                 <div  class="mt-2">
-                                                    <span class="material-icons-two-tone">chevron_right</span>
+                                                    <span class="material-icons-two-tone rotate-icon">link</span>
                                                 </div>
                                                 <div>
                                                     <a href="#}">¿Adónde Vamos?</a>

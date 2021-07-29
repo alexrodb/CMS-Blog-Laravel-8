@@ -1,3 +1,50 @@
+/* root */
+:root {
+
+    --color-white:    #fff    ;
+    --color-gray-50:  #FAFAFA ;
+    --color-gray-100: #F5F5F5 ;
+    --color-gray-200: #EEEEEE ;
+    --color-gray-300: #E0E0E0 ;
+    --color-gray-400: #BDBDBD ;
+    --color-gray-500: #9E9E9E ;
+    --color-gray-600: #757575 ;
+    --color-gray-700: #616161 ;
+    --color-gray-800: #424242 ;
+    --color-gray-900: #212121 ;
+    --color-gray-1000:#191919 ;
+    --color-black:    #000    ;
+
+    /* colors */
+    --color-yellow: #FEDC04;
+    --color-blue: #1C56E8;
+    --color-red: #e61d2b;
+
+    /* theme */
+    --color-primary: var(--color-red);
+    --color-secondary: var(--color-blue);
+    --color-warning: var(--color-yellow);
+
+    /* bgs */
+    --bg-color-primary: white;
+    --bg-color-secondary: black;
+
+    /* fonts */
+    --color-font-100: white;
+
+    --color-font-150: #F2F2F2;
+    --color-font-200: #DDD;
+    --color-font-250: #C4C4C4;
+
+    --color-font-300 : #AAA;
+    --color-font-350 : #A7A7A7;
+
+    --color-font-400: #9D9D9D;
+    --color-font-500: #707070;
+
+    --color-font-900: black;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +58,7 @@ a {
 .contenedor {
 	margin: auto;
 	width: 95%;
-	max-width: 1760px;
+	max-width: 1747px;
 }
 
 /* ------------------------- */
@@ -82,7 +129,6 @@ a {
 .menu .btn-departamentos span {
 	display: block;
 	font-size: 18px;
-	font-weight: bold;
 }
 
 .menu .contenedor-enlaces-nav .enlaces  {
@@ -135,7 +181,12 @@ a {
 
 .grid > div {
 	background: #fff;
-	box-shadow: 0px 3px 6px rgba(0,0,0,.10);
+	box-shadow: 0px 2px 3px rgba(0,0,0,.10);
+}
+
+body.dark .grid > div {
+    background: var(--color-gray-900);
+	box-shadow: 0px 2px 3px rgba(231, 231, 231, 0.1);
 }
 
 /* ------------------------- */
@@ -182,12 +233,20 @@ a {
 }
 
 .grid .categorias a:hover {
-	color: #730E0D;
+	color: var(--color-red);
 	font-weight: bold;
 }
 
 .grid .categorias a:hover i {
 	display: inline-block;
+}
+
+body.dark .grid .categorias a {
+    color: var(--color-white);
+}
+
+body.dark .grid .categorias a:hover {
+    color: var(--color-red);
 }
 
 /* ------------------------- */
@@ -231,13 +290,13 @@ a {
 }
 
 .grid .enlaces-subcategoria a:hover {
-	color: #730E0D;
+	color: var(--color-red);
 }
 
 .grid .subtitulo {
 	font-size: 18px;
 	font-weight: normal;
-	color: #730E0D;
+	color: var(--color-gray-500);
 	padding: 10px 20px;
 }
 
@@ -256,6 +315,15 @@ a {
 	width: 50%;
 	height: 50%;
 }
+
+body.dark .grid .enlaces-subcategoria a {
+    color: var(--color-white);
+}
+
+body.dark .grid .enlaces-subcategoria a:hover {
+    color: var(--color-red);
+}
+
 
 /* ------------------------- */
 /* Mediaqueies */

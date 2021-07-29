@@ -55,10 +55,10 @@
                                 </div>
                             @endif
                             <!--title_picture-->
-                            <label class="mb-2">Nombre </label>
+                            <label class="mb-2">Nombre de la imagen</label>
                             <input type="text" name="title_picture" class="form-control  mb-2" id = "title_picture"  value="{{ old('title_picture', $post->title_picture)}}">
                             <!--source_picture-->
-                            <label class="mb-2">Nombre </label>
+                            <label class="mb-2">Fuente de la imagen (Solo poner un nombre del sitio de origen o del fotógrafo)</label>
                             <input type="text" name="source_picture" class="form-control  mb-2" id = "source_picture"  value="{{ old('source_picture', $post->source_picture)}}">
                         </div>
                         <div class="col-md-6">

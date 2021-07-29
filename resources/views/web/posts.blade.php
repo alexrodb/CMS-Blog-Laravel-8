@@ -3,7 +3,7 @@
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
 @foreach($posts as $post)
 <div class="col">
-    <div class="card border-0 h-100">
+    <div class="card border-0 h-100" id="card">
         <a href="{{route('post',$post->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$post->picture) }}" class="card-img-top" alt="{{ $post->post_picture }}"></a>
         <div class="card-body">
             <h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3>

@@ -34,7 +34,7 @@
         @endif
 
         <div class="d-flex justify-content-center align-items-center mt-2 mb-4">
-        <h5 class="p-2 fw-bolder">Resumen:</h5>
+        <h5 class="p-2 bodyTitleAbstract">Resumen:</h5>
         <p class="p-2 bodyAbstract">{{ $post->abstract }}</p>
         </div>
         
