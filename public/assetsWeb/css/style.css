@@ -116,7 +116,7 @@ p{
 
 .card-title {
     font-family: 'FontCMSBLOGSerif-Bold';
-    font-size: 1.15em;
+    font-size: 1.25em;
     line-height: 1.2;
 }
 
@@ -128,9 +128,10 @@ p{
     color: var(--color-primary);
 }
 .card-Abstract {
-    font-family: 'FontCMSBLOGSerif-Regular';
+    font-family: 'FontCMSBLOGSans-Regular';
     font-size: 1em;
     line-height: 1.2;
+    text-align: justify;
 }
 .card-time {
     font-family: 'FontCMSBLOGSans-Regular';
@@ -253,7 +254,7 @@ a:hover {
 
 }
 .read-more{
-    font-family: 'FontCMSBLOGSans-Regular';
+    font-family: 'FontCMSBLOGSans-Medium';
     font-size: 0.9em;
 }
 .card-footer{
@@ -310,4 +311,26 @@ a:hover {
     font-family: 'FontCMSBLOGSans-Regular';
     line-height: 1.5;
     text-align: justify;
+}
+
+.container-footer .mainFooter_container .listTitle{
+    list-style: none;
+    padding-left: 0rem;
+    font-family: 'FontCMSBLOGSans-Medium';
+    font-size: 1.4em;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    border-bottom: 2.5px solid #fff;
+}
+
+.container-footer .mainFooter_container .listItems{
+    list-style: none;
+    padding-left: 0.5rem;
+}
+.container-footer .mainFooter_container .listItems a {
+    color: #fff;
+    font-size: 1em;
+    font-family: 'FontCMSBLOGSans-Regular';
+    text-align: justify;
+    text-decoration: none;
 }

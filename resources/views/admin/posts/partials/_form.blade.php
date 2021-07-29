@@ -54,6 +54,12 @@
                                     <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/img/NoPicture.jpg') }}" alt="{{ $post->picture }}">
                                 </div>
                             @endif
+                            <!--title_picture-->
+                            <label class="mb-2">Nombre </label>
+                            <input type="text" name="title_picture" class="form-control  mb-2" id = "title_picture"  value="{{ old('title_picture', $post->title_picture)}}">
+                            <!--source_picture-->
+                            <label class="mb-2">Nombre </label>
+                            <input type="text" name="source_picture" class="form-control  mb-2" id = "source_picture"  value="{{ old('source_picture', $post->source_picture)}}">
                         </div>
                         <div class="col-md-6">
                             <!--category_id--> 
@@ -67,7 +73,7 @@
                             </select>
                             <!--Tags-->
                             <label class="mb-2">Escoge las etiquetas para esta entrada</label> 
-                            <select class="form-select mb-2" size="20" multiple name="tags[]" required>
+                            <select class="form-select mb-2" size="32" multiple name="tags[]" required>
                                 @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}"
                                         @foreach ($post->tags as $postTag)
