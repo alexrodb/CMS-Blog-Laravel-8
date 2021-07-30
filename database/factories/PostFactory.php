@@ -38,7 +38,7 @@ class PostFactory extends Factory
             'picture'=> rand(1,10).'.jpg',
             'title_picture' => $this->faker->text(60),
             'source_picture' => $this->faker->text(15),
-
+            'total_visits'=> rand(1,200000),
         ];
     }
 }

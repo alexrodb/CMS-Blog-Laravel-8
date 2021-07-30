@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Category;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class PageController extends Controller
 {   
@@ -41,10 +42,18 @@ class PageController extends Controller
         $date = Carbon::now();
         $post = Post::where('slug',$slug)->first();
 
+        //Contador de visitas que incrementa cuando se visita cada post o entrada.
+        $incrementCounterVisits = Post::where('slug',$slug)->first();
+        if(Cache::has($slug)==false){
+            Cache::add($slug,'counter',0.30);
+            $incrementCounterVisits->total_visits++;
+            $incrementCounterVisits->save();
+        }
+
         //Enlista las ultimas entradas de la categoria del post y lo envia junto con los datos del post.
         $LastCategoryEntries = Post::where('category_id', $post->category_id)
         ->where('status','PUBLISHED')->where('id','!=', $post->id)->orderBy('id','DESC')->take(5)->get();
 
-        return view('web.post', compact('post','date','LastCategoryEntries'));
+        return view('web.post', compact('post','date','LastCategoryEntries','incrementCounterVisits'));
     }
 }

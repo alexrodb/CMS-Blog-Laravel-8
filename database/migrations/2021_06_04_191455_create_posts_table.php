@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('picture',128)->nullable();
             $table->string('title_picture',140)->nullable();
             $table->string('source_picture',128)->nullable();
+            $table->integer('total_visits')->nullable();
 
             //Relation - Relaciones 
             //Si eliminamos un usuario se eliminan los post pertenecientes al usuario

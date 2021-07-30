@@ -5,13 +5,19 @@
     <div class="col-lg-9 col-md-12">
 
     <article class="blog-post mt-3">
-        <div class="d-flex flex-row justify-content-start align-items-center">
-            <div  class="mt-1 py-2">
-                <span class="material-icons-two-tone rotate-icon">link</span>
-            </div>
-            <div>
-                <h3 class="titlecategory">Publicado en <a class="colorLinkCategory m-1" href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3>
-            </div>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+                    <div class="d-flex flex-row justify-content-start align-items-center">
+                        <div  class="mt-1 py-2">
+                            <span class="material-icons-two-tone rotate-icon">link</span>
+                        </div>
+                    <h3 class="titlecategory">Publicado en <a class="colorLinkCategory m-1" href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between align-items-center card-visitsPost">
+                        <div class="mt-2 mx-1"><span class="material-icons-two-tone">visibility</span></div>
+                        <div class=""><p class=" mt-3 mb-3">{{ $incrementCounterVisits->total_visits }}</p></div>
+                    </div>
+                
+            
         </div>
 
         <h1 class="blog-post-title mb-2">{{ $post->name }}</h1>

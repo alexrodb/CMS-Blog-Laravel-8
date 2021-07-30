@@ -6,7 +6,13 @@
     <div class="card border-0 h-100" id="card">
         <a href="{{route('post',$post->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$post->picture) }}" class="card-img-top" alt="{{ $post->post_picture }}"></a>
         <div class="card-body">
-            <h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3>
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <div class=""><h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3></div>
+                <div class="d-flex flex-row justify-content-between align-items-center card-visits">
+                    <div class="mt-2 mx-1"><span class="material-icons-two-tone">visibility</span></div>
+                    <div class=""><p class=" mt-3 mb-3">{{ $post->total_visits }}</p></div>
+                </div>
+            </div>
             <h3 class="card-title">{{ $post->name }}</h3>
             <p class="card-Abstract mt-3 mb-3">{{ $post->abstract }}</p>
         </div>
