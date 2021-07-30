@@ -471,7 +471,7 @@ body.dark .logo-time{
 
 /* Switch */
 .switch {
-    background: var(--color-gray-900);
+    background: var(--color-black);
     border-radius: 62.5em;
     border: none;
     position: relative;
@@ -485,8 +485,8 @@ body.dark .logo-time{
 .switch::after {
     content: "";
     display: block;
-    width: 1.875em;
-    height: 1.875em;
+    width: 2.2em;
+    height: 2.2em;
     position: absolute;
     background: #F1F1F1;
     top: 0;
@@ -498,7 +498,7 @@ body.dark .logo-time{
 }
 
 .switch.active {
-    background: #FFD400;
+    background: #0053bf;
     color: #000;
 }
 
@@ -508,10 +508,15 @@ body.dark .logo-time{
 }
 
 .switch span {
-    width: 1.875em;
-    height: 1.875em;
-    line-height: 1.875em;
+    width: 2.2em;
+    height: 2.2em;
+    line-height: 0.5em;
     display: block;
     background: none;
     color: #fff;
+}
+.icontamano{
+    margin-top: 0.2em;
+    width: 1.8em;
+    height: 1.8em;
 }

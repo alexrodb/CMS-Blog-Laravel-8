@@ -382,8 +382,8 @@
                     <div class="d-flex flex-row justify-content-end align-items-center logoheight">
                         <div>
                             <button class="switch" id="switch">
-                                <span><i class="fas fa-sun"></i></span>
-                                <span><i class="fas fa-moon"></i></span>
+                                <span><img class="icontamano" src="{{ asset('assetsWeb/images/svg/icons/sol.svg') }}"  alt="Sol"></span>
+                                <span><img class="icontamano" src="{{ asset('assetsWeb/images/svg/icons/luna.svg') }}"  alt="luna"></span>
                             </button>
                         </div>
                     </div>
