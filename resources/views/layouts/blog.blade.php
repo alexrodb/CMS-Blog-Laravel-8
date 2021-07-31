@@ -365,7 +365,7 @@
         </header>
 
         <main class="container mtopem">
-            <div class="row logo mt-4 mb-5">
+            <div class="row logo mt-4 mb-3">
                 <div class=" col-md-4 col-xs-12p-0 p-0">
                     <div class="d-flex flex-row justify-content-start align-items-center logoheight">
                         <div class="logo-time"><p>{{ $date->isoFormat('dddd, D [de] MMMM [de] YYYY. h:mm a')}}</p></div>
@@ -382,8 +382,8 @@
                     <div class="d-flex flex-row justify-content-end align-items-center logoheight">
                         <div>
                             <button class="switch" id="switch">
-                                <span><img class="icontamano" src="{{ asset('assetsWeb/images/svg/icons/sol.svg') }}"  alt="Sol"></span>
-                                <span><img class="icontamano" src="{{ asset('assetsWeb/images/svg/icons/luna.svg') }}"  alt="luna"></span>
+                                <span><img class="iconSizeSwitch" src="{{ asset('assetsWeb/images/svg/icons/sol.svg') }}"  alt="Sol"></span>
+                                <span><img class="iconSizeSwitch" src="{{ asset('assetsWeb/images/svg/icons/luna.svg') }}"  alt="luna"></span>
                             </button>
                         </div>
                     </div>
@@ -413,8 +413,8 @@
                                     <ul class="listItems">
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}" alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -423,8 +423,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -433,8 +433,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>   
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -443,8 +443,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -453,8 +453,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -469,8 +469,8 @@
                                     <ul class="listItems">
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -479,8 +479,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -489,8 +489,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -499,8 +499,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -509,8 +509,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">Lorem ipsum</a>
@@ -525,8 +525,8 @@
                                     <ul class="listItems">
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">¿De Dónde Venimos?</a>
@@ -535,8 +535,8 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
                                                     <a href="#}">¿Quiénes Somos?</a>
@@ -545,11 +545,11 @@
                                         </li>
                                         <li>
                                             <div class="d-flex flex-row justify-content-start align-items-center">
-                                                <div  class="mt-2">
-                                                    <span class="material-icons-two-tone rotate-icon">link</span>
+                                                <div>
+                                                    <img class="iconSize" src="{{ asset('assetsWeb/images/svg/icons/link.svg') }}"  alt="link">
                                                 </div>
                                                 <div>
-                                                    <a href="#}">¿Adónde Vamos?</a>
+                                                    <a class="mt-2" href="#}">¿Adónde Vamos?</a>
                                                 </div>
                                             </div>
                                         </li>

@@ -68,6 +68,7 @@ php artisan migrate
 o 
 php artisan migrate:refresh --seed
 
+php artisan:storage:link 
 -------------------------------------
 
 composer dump-autoload

@@ -229,7 +229,6 @@ body.dark .blog-post .bodyTitleAbstract{
     color: var(--color-gray-200);
 }
 
-
 .bodyAbstract{
     font-style: italic;
     font-size: 1.15em;
@@ -246,6 +245,11 @@ body.dark .blog-post .bodyAbstract{
 
 .fontExtraBold{
     font-family:'FontCMSBLOGSerif-ExtraBold' ;
+}
+
+.nextprev p{
+    font-family:'FontCMSBLOGSans-Medium' ;
+    font-size: 1.25em;
 }
 
 .date p::first-letter {
@@ -309,8 +313,6 @@ body.dark .datetime .date {
     padding: 5px 9.5px 5px 9.5px;
     line-height: 26px;
     box-decoration-break: clone;
-    box-decoration-break: clone;
-    top: 1rem;
 
 }
 
@@ -411,7 +413,6 @@ body.dark .card-footer {
     padding: 1em;
 }
 
-
 .logoheight {
     height: 3em;
 }
@@ -433,10 +434,9 @@ body.dark .logo{
 
 .logo-time {
     font-family: 'FontCMSBLOGSans-Regular';
-    font-size: 1.15em;
-    
-    
+    font-size: 0.9em;
 }
+
 .logo-time p::first-letter {
     text-transform: uppercase;
 }
@@ -465,7 +465,7 @@ body.dark .logo-time{
     font-family: 'FontCMSBLOGSans-Medium';
     font-size: 1.4em;
     margin-top: 1em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.6em;
     border-bottom: 2.5px solid #fff;
 }
 
@@ -479,6 +479,10 @@ body.dark .logo-time{
     font-family: 'FontCMSBLOGSans-Regular';
     text-align: justify;
     text-decoration: none;
+}
+
+.listItems li {
+    margin-top: 0.5em;
 }
 
 /* Switch */
@@ -527,8 +531,13 @@ body.dark .logo-time{
     background: none;
     color: #fff;
 }
-.icontamano{
+.iconSizeSwitch{
     margin-top: 0.2em;
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.85em;
+    height: 1.85em;
+}
+.iconSize{
+    margin-right:0.5em;
+    width: 1em;
+    height: 1em;
 }

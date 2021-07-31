@@ -34,7 +34,7 @@ class PostFactory extends Factory
             'slug' => Str::slug($title), //convierte un string a slug
             'status'=> $this->faker->randomElement(['DRAFT','PUBLISHED']),
             'abstract' => $this->faker->text(250), // crea un texto de 350 caracteres.
-            'body' => $this->faker->text(2000), // crea un texto de 2000 caracteres.
+            'body' => $this->faker->text(8000), // crea un texto de 2000 caracteres.
             'picture'=> rand(1,10).'.jpg',
             'title_picture' => $this->faker->text(60),
             'source_picture' => $this->faker->text(15),

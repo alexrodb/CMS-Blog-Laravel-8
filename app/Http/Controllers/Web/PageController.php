@@ -43,17 +43,23 @@ class PageController extends Controller
         $post = Post::where('slug',$slug)->first();
 
         //Contador de visitas que incrementa cuando se visita cada post o entrada.
-        $incrementCounterVisits = Post::where('slug',$slug)->first();
+        $incrementCounterVisits = $post;
         if(Cache::has($slug)==false){
             Cache::add($slug,'counter',0.30);
             $incrementCounterVisits->total_visits++;
             $incrementCounterVisits->save();
         }
 
+        //Busca la información del siguiente y anterior post que esten publicados
+        $idpost   =   Post::where('slug', $slug)->pluck('id')->first(); //busca el id del post
+        $registro =   Post::where("id",$idpost)->first(); //Esta consulta extrae el registro que coincide el valor del $id que tiene como parámetro y que se busco antes.
+        $next     =   Post::where('id', '>', $registro->id)->orderBy('id', 'asc')->where('status', 'PUBLISHED')->first(); //Consulta que permite extraer el siguiente post con un id mayor y este publicado
+        $prev     =   Post::where('id', '<', $registro->id)->orderBy('id', 'desc')->where('status', 'PUBLISHED')->first();//Consulta que permite extraer el anterior  post con un id menor y este publicado
+
         //Enlista las ultimas entradas de la categoria del post y lo envia junto con los datos del post.
         $LastCategoryEntries = Post::where('category_id', $post->category_id)
         ->where('status','PUBLISHED')->where('id','!=', $post->id)->orderBy('id','DESC')->take(5)->get();
 
-        return view('web.post', compact('post','date','LastCategoryEntries','incrementCounterVisits'));
+        return view('web.post', compact('post','date','LastCategoryEntries','incrementCounterVisits','next','prev'));
     }
 }
