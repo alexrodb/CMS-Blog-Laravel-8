@@ -30,7 +30,10 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $searchPost=$request->get('searchPost');
-        $posts = Post::orderBy('post_code','DESC')->where('name','like','%'.$searchPost.'%')->paginate(12);
+        $posts = Post::orderBy('id','DESC')
+        ->where('name','like','%'.$searchPost.'%')
+        ->where('user_id', auth()->user()->id)  //Permite mostrar o filtrar los post o entradas que le pertenecen o fueron creados por cada usuario.
+        ->paginate(12);
         return view('admin.posts.index', compact('posts','searchPost')); // El array se puede escribir tambien como ['posts'=>'$posts' o 'searchPost'=>$searchPost]
     }
 
@@ -120,8 +123,10 @@ class PostController extends Controller
     {    
         $categories = Category::orderBy('name','ASC')->pluck('name','id');
         $tags       = Tag::orderBy('name','ASC')->get();
-        $post = Post::find($id);
-        
+        $post       = Post::find($id);
+
+        $this->authorize('author', $post);// verifica si el usuario ha creado la entrada, si el usuario la creó puede editarlo, si no la creó no puede editar con ayuda de Policies.
+
         return view('admin.posts.edit', compact('post','categories','tags'));
     }
 
@@ -136,6 +141,8 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
+        $this->authorize('author', $post);// verifica si el usuario ha creado la entrada, si el usuario la creó puede actualizar, si no la creó no puede actualizar con ayuda de Policies.
+        
         //picture
         //Gestiona la actualización de la imagen de la entrada eliminando la anterior si llega a existir.
         if($request->hasFile('picture_up'))
@@ -183,6 +190,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+
+        $this->authorize('author', $post);// verifica si el usuario ha creado la entrada, si el usuario la creó puede eliminarlo, si no la creó no puede eliminarlo con ayuda de Policies.
 
         //Borra la imagen principal que tiene una Entrada
         if($post->picture != 'noimage.jpg')

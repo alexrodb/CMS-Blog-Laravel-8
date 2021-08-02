@@ -36,6 +36,9 @@
                             <th scope="col">
                                 <div class="d-flex flex-row justify-content-center">Código</div>
                             </th>
+                            <th scope="col">
+                                <div class="d-flex flex-row justify-content-center">ID</div>
+                            </th>
                             <th scope="col"><div class="d-flex flex-row">Nombre</div>
                             </th>
                             <th scope="col"><div class="d-flex flex-row justify-content-center">Estado</div>
@@ -47,6 +50,7 @@
                     @foreach($posts as $post) 
                     <tr>
                         <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $post->post_code}}</div></th>
+                        <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $post->id}}</div></th>
                         <td>{{ $post->name}}</td>
                         <td class="text-center">
                             @if ($post->status === 'PUBLISHED')

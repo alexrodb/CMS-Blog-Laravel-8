@@ -11,9 +11,10 @@
 -------------------------------------
 
 composer global require laravel/installer
-laravel new cmsblog --jet
-C:\xampp\htdocs> laravel new CMSBlogLaravel --jet
 
+laravel new cmsblog --jet
+
+C:\xampp\htdocs> laravel new CMSBlogLaravel --jet
 
 Which Jetstream stack do you prefer?
   [0] livewire
@@ -59,6 +60,9 @@ php artisan make:request CategoryUpdateRequest
 php artisan make:request TagStoreRequest
 php artisan make:request TagUpdateRequest
 
+
+php artisan make:policy PostPolicy
+
 -------------------------------------
 
 composer install
@@ -68,7 +72,7 @@ php artisan migrate
 o 
 php artisan migrate:refresh --seed
 
-php artisan:storage:link 
+php artisan storage:link 
 -------------------------------------
 
 composer dump-autoload
@@ -76,6 +80,15 @@ composer dump-autoload
 -------------------------------------
 php artisan --version 
 -------------------------------------
+
+php artisan cache:clear
+php artisan view:clear
+php artisan route:cache
+php artisan config:cache
+php artisan optimize
+-------------------------------------
+
+
 composer require haruncpi/laravel-simple-filemanager
 php artisan filemanager:install
 

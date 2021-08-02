@@ -16,7 +16,7 @@
   width: 260px;
   background: #191919;
   z-index: 100;
-  transition: all 0.5s ease;
+  
 }
 .sidebar.close{
   width: 78px;
@@ -203,7 +203,7 @@
   justify-content: space-between;
   background: #383838;
   padding: 6px 0;
-  transition: all 0.5s ease;
+  
 }
 .sidebar.close .profile-details{
   background: none;
@@ -222,7 +222,7 @@
   border-radius: 16px;
   margin: 0 14px 0 12px;
   background: #383838;
-  transition: all 0.5s ease;
+  
 }
 .sidebar.close .profile-details img{
   padding: 10px;
@@ -250,7 +250,7 @@
   */
   left: 260px;
   width: calc(100% - 260px);
-  transition: all 0.5s ease;
+  
 }
 .sidebar.close ~ .home-section{
   left: 78px;

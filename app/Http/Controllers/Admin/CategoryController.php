@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $searchCategory=$request->get('searchCategory');
-        $categories = Category::orderBy('category_code','DESC')->where('name','like','%'.$searchCategory.'%')->paginate(12);
+        $categories = Category::orderBy('id','DESC')->where('name','like','%'.$searchCategory.'%')->paginate(12);
         return view('admin.categories.index', compact('categories','searchCategory')); // El array se puede escribir tambien como ['categories'=>'$categories' o 'searchCategory'=>$searchCategory]
     }
 

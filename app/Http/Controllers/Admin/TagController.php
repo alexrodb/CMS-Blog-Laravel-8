@@ -27,7 +27,7 @@ class TagController extends Controller
     public function index(Request $request)
     {
         $searchTag=$request->get('searchTag');
-        $tags = Tag::orderBy('tag_code','DESC')->where('name','like','%'.$searchTag.'%')->paginate(12);
+        $tags = Tag::orderBy('id','DESC')->where('name','like','%'.$searchTag.'%')->paginate(12);
         return view('admin.tags.index', compact('tags','searchTag')); // El array se puede escribir tambien como ['tags'=>'$tags' o 'searchTag'=>$searchTag]
     }
 

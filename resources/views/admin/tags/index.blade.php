@@ -36,6 +36,9 @@
                             <th scope="col">
                                 <div class="d-flex flex-row justify-content-center">Código</div>
                             </th>
+                            <th scope="col">
+                                <div class="d-flex flex-row justify-content-center">ID</div>
+                            </th>
                             <th scope="col"><div class="d-flex flex-row justify-content-center">Nombre</div>
                             </th>
                             <th scope="col">&nbsp</th>
@@ -45,6 +48,7 @@
                     @foreach($tags as $tag) 
                     <tr>
                         <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $tag->tag_code}}</div></th>
+                        <th scope="row"><div class="d-flex flex-row justify-content-center">{{ $tag->id}}</div></th>
                         <td>{{ $tag->name}}</td>
                         <td>
                             <div class="d-flex flex-row justify-content-between ">

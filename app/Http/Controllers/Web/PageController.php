@@ -42,6 +42,8 @@ class PageController extends Controller
         $date = Carbon::now();
         $post = Post::where('slug',$slug)->first();
 
+        $this->authorize('published',$post);
+
         //Contador de visitas que incrementa cuando se visita cada post o entrada.
         $incrementCounterVisits = $post;
         if(Cache::has($slug)==false){
