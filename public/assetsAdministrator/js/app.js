@@ -1,5 +1,3 @@
-localStorage.setItem('close-sidebar', 'true');
-
 // Status sidebar
 let sidebar = document.querySelector(".sidebar");
 const btnSwitch = document.querySelector('.ico-menu');

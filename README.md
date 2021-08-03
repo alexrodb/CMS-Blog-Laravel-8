@@ -110,8 +110,15 @@ PS C:\xampp\htdocs\CMS-Blog-Laravel-8>
 </head>
 -------------------------------------
 
+PS C:\xampp\htdocs\CMS-Blog-Laravel-8> php artisan livewire:publish
 
-
+Copied Directory [\vendor\livewire\livewire\dist] To [\public\vendor\livewire]
+Publishing complete.
+Copied File [\vendor\livewire\livewire\config\livewire.php] To [\config\livewire.php]
+Publishing complete.
+Copied Directory [\vendor\livewire\livewire\src\views\pagination] To [\resources\views\vendor\livewire]
+Publishing complete.
+-------------------------------------
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

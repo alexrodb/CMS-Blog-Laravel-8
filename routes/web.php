@@ -16,15 +16,6 @@ use App\Http\Controllers\Admin\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-*/
 
 Route::redirect('/', 'blog');
 
@@ -35,8 +26,7 @@ Route::get('categoria/{slug}', 'App\Http\Controllers\Web\PageController@category
 Route::get('etiqueta/{slug}',  'App\Http\Controllers\Web\PageController@tag')->name('tag');
 
 //Administración
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {return view('dashboard');})->name('dashboard');
-//Route::view('/dashboard',        'admin\dashboardIndex')->name('dashboard')->middleware('auth');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {return view('admin.dashboard');})->name('dashboard');
 
 Route::resource('categories',     CategoryController::class)->names('admin.categories');
 Route::resource('tags',           TagController::class)->names('admin.tags');

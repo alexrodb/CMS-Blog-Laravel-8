@@ -43,7 +43,7 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('dashboard') }}">
                     <span class="material-icons"> dashboard </span>
                     <span class="link_name">Dashboard</span>
                     </a>
