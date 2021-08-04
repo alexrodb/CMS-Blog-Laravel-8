@@ -4,10 +4,9 @@
             <x-authentication-card-logo />
         </x-slot>
 
-        <x-validation-errors class="mb-4" />
-
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
+        </div>
+            <div class="mb-4">
                 {{ session('status') }}
             </div>
         @endif
@@ -18,9 +17,9 @@
             <div class="mb-3">
                 <x-label class="mb-2 text-muted" for="email" value="{{ __('Email') }}" />
                 <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
-				<div class="invalid-feedback">
-				Email is invalid
-				</div>
+                    <div class="invalid-feedback">
+                        El correo electrónico ingresado es invalido.
+                    </div>
 			</div>
 
             <div class="mb-3">
@@ -33,9 +32,9 @@
                     @endif
 				</div>
 				<x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
-				<div class="invalid-feedback">
-					Password is required
-				</div>
+                    <div class="invalid-feedback">
+                        Se necesita una contraseña para iniciar una sesión.
+                    </div>
 			</div>
 
             <div class="d-flex align-items-center">
@@ -48,9 +47,10 @@
 				</button>
 			</div>
 
-
+            <x-validation-errors class="mt-4 mb-4" />
 
             </div>
         </form>
+        
     </x-authentication-card>
 </x-guest-layout>

@@ -24,10 +24,15 @@
         <script src="{{ asset('assetsAdministrator/js/applogin.js') }}" defer></script>
     </head>
     <body class="text-white background">
-        <section>
-            <div class="d-flex flex-row justify-content-center align-items-center">
-                {{ $slot }}
+        
+            <div class="container vh-100">
+
+            <div class="vh-100 d-flex flex-row justify-content-center align-items-center">
+                <div class="col-12 col-xxl-6 col-xl-6 col-lg-10 col-md-10 col-sm-10">
+                    {{ $slot }}
+                </div>
+
             </div>
-        </section>    
+            
     </body>
 </html>
