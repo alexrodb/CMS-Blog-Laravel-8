@@ -7,18 +7,27 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <style>
+        /* Bootstrap Icons*/
+        @font-face {
+                font-family: "bootstrap-icons";
+                src: url('{{asset('assetsAdministrator/fonts/bootstrap-icons.woff2')}}') format("woff2");
+                src: url('{{asset('assetsAdministrator/fonts/bootstrap-icons.woff')}}') format("woff");
+        }
+        </style> 
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link href="{{ asset('assetsAdministrator/css/stylelogin.css') }}" rel="stylesheet">
+        <link href="{{ asset('assetsAdministrator/css/scss/bootstrap.css') }}" rel="stylesheet">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('assetsAdministrator/js/applogin.js') }}" defer></script>
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
+    <body class="text-white background">
+        <section>
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                {{ $slot }}
+            </div>
+        </section>    
     </body>
 </html>

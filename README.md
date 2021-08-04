@@ -119,6 +119,29 @@ Publishing complete.
 Copied Directory [\vendor\livewire\livewire\src\views\pagination] To [\resources\views\vendor\livewire]
 Publishing complete.
 -------------------------------------
+
+
+php artisan vendor:publish --tag=jetstream-views
+
+PS C:\xampp\htdocs\CMS-Blog-Laravel-8> php artisan vendor:publish --tag=jetstream-views
+Copied Directory [\vendor\laravel\jetstream\resources\views] To [\resources\views\vendor\jetstream]
+Publishing complete.
+-------------------------------------
+Application Logo
+After installing Jetstream, you may have noticed that the Jetstream logo is utilized on Jetstream's authentication pages as well as your application's top navigation bar. You may easily customize the logo by modifying a few Jetstream components.
+
+#Livewire
+If you are using the Livewire stack, you should first publish the Livewire stack's Blade components:
+
+php artisan vendor:publish --tag=jetstream-views
+Next, you should customize the SVGs located in the
+resources/views/vendor/jetstream/components/application-logo.blade.php,
+resources/views/vendor/jetstream/components/authentication-card-logo.blade.php, and 
+resources/views/vendor/jetstream/components/application-mark.blade.php components.
+
+Luego copie esos componentes dentro de views y elimine el prefijo -jet en las plantillas blade para llamar a los components copiados en views, no estoy usando los components \resources\views\vendor\jetstream creados con php artisan vendor:publish --tag=jetstream-views , los cuales pueden ser sobreescritos si se usa el comando php artisan vendor:publish --force eliminando los cambios de logo, estilos, etc
+
+-------------------------------------
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

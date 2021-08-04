@@ -124,6 +124,16 @@
                     <li><a class="link_name" href="#">Entradas</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a href="{{ route('profile.show') }}">
+                    <span class="material-icons"> manage_accounts </span>
+                    <span class="link_name">Administrar cuenta</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Administrar cuenta</a></li>
+                    </ul>
+                </li>
                 
                 <li>
                     
@@ -133,7 +143,7 @@
                 </div>
                 <div class="name-job">
                     <div class="profile_name">{{ Auth::user()->name }}</div>
-                    <div class="job">Role</div>
+                    <div class="job"></div>
                 </div>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
