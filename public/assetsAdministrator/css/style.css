@@ -282,6 +282,17 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.card li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card li a span {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* Material Icons
 
 @font-face {

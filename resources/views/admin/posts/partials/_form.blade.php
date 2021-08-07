@@ -3,17 +3,18 @@
                 <div class="container">
                     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                     <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="d-flex flex-row justify-content-start">
+                                <button type="submit" class="btn btn-success"><span class="bi bi-save"></span> {{$btnText}}</button>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             @php
                                 $statusPost = $post->status;
                             @endphp
-                                
                             <div class="col">
-                                <!--status-->
-                                <div class="d-flex ">
-                                    
+                                <!--status-->                     
                                 <label class="mb-3">Estado de la entrada o publicación:</label>
-                                </div>
                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input mt-2" type="radio" name="status" id="inlineRadio1" value="{{'DRAFT'}}"
@@ -32,11 +33,11 @@
                                 </div>
                             </div>
                             <!--name-->
-                            <label class="mb-2">Nombre </label>
-                            <input type="text" name="name" class="form-control  mb-2" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)" required>
+                            <label class="mb-3">Nombre </label>
+                            <input type="text" name="name" class="form-control  mb-3" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)" required>
                             <!--slug--> 
-                            <label class="mb-2">URL amigable</label>
-                            <div class="input-group flex-nowrap  mb-2">
+                            <label class="mb-3">URL amigable</label>
+                            <div class="input-group flex-nowrap  mb-3">
                                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-link-45deg"></i></span>
                                 <input type="text" name="slug" class="form-control" id = "slug-text"  value="{{ old('slug', $post->slug)}}" readonly required>
                             </div>
@@ -56,7 +57,7 @@
                             @endif
                             <!--title_picture-->
                             <label class="mb-2">Nombre de la imagen</label>
-                            <input type="text" name="title_picture" class="form-control  mb-2" id = "title_picture"  value="{{ old('title_picture', $post->title_picture)}}">
+                            <input type="text" name="title_picture" class="form-control  mb-3" id = "title_picture"  value="{{ old('title_picture', $post->title_picture)}}">
                             <!--source_picture-->
                             <label class="mb-2">Fuente de la imagen (Solo poner un nombre del sitio de origen o del fotógrafo)</label>
                             <input type="text" name="source_picture" class="form-control  mb-2" id = "source_picture"  value="{{ old('source_picture', $post->source_picture)}}">
@@ -112,6 +113,6 @@
                     </div>
                     <div class="col-12 p-2">
                         <div class="d-flex flex-row justify-content-end">
-                        <button type="submit" class="btn btn-success"><span class="bi bi-save"></span> {{$btnText}}</button>
+                        <button type="submit" class="btn btn-success btn-lg"><span class="bi bi-save"></span> {{$btnText}}</button>
                         </div>
                     </div>
