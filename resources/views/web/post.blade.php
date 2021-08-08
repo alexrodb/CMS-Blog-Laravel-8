@@ -44,7 +44,7 @@
         <p class="p-2 bodyAbstract">{{ $post->abstract }}</p>
         </div>
         
-        <div class="bodyPost"> 
+        <div class="bodyPost" id="bodyPost"> 
         <div class="textPost">{!! $post->body!!}</div>
         </div>
 
@@ -209,3 +209,7 @@
 
 </div>
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('assetsWeb/js/imgResponsives.js') }}"></script>
+@endsection 

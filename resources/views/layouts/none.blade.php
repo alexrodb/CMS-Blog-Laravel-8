@@ -31,6 +31,27 @@
                 src: url('{{asset('assetsAdministrator/fonts/bootstrap-icons.woff2')}}') format("woff2");
                 src: url('{{asset('assetsAdministrator/fonts/bootstrap-icons.woff')}}') format("woff");
         }
+
+        /* Roboto */
+        @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('{{asset('assetsAdministrator/fonts/Roboto/Roboto-Regular.woff2')}}') format("woff2");
+        src: url('{{asset('assetsAdministrator/fonts/Roboto/Roboto-Regular.ttf')}}') format('truetype');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-display: swap;
+        src: url('{{asset('assetsAdministrator/fonts/Roboto/Roboto-Bold.woff2')}}') format("woff2");
+        src: url('{{asset('assetsAdministrator/fonts/Roboto/Roboto-Bold.ttf')}}') format('truetype');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
         </style> 
 
         <!-- Styles -->
@@ -215,8 +236,8 @@
             </section>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="{{ asset('assetsAdministrator/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assetsAdministrator/js/bootstrap.min.js') }}"></script>
         <!-- stringToSlug -->
         <script src="{{ asset('vendor/stringToSlug/stringToSlug.js') }}"></script>
         

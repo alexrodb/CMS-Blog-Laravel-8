@@ -95,7 +95,7 @@
                     <div class="col-12 mb-1">
                     <label class="mb-2">Descripción</label>
                     <div class="input-group">
-                        <textarea class="form-control" id="ckeditor" name="body" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
+                        <textarea class="form-control" id="ckeditor" name="ckeditor" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
                     </div>
 
                     <!-- ckeditor -->

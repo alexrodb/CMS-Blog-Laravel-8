@@ -5,7 +5,16 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
-	config.extraPlugins = 'justify';
+	config.removePlugins = 'exportpdf,image';
+
+	config.extraPlugins = 'lineutils';
+	config.extraPlugins = 'clipboard';
+	config.extraPlugins = 'dialog';
+	config.extraPlugins = 'dialogui';
+	config.extraPlugins = 'notification';	
+	config.extraPlugins = 'widget';
+	config.extraPlugins = 'image2';
+
 	config.language = 'es';
 	config.uiColor = '#9E9E9E';
 	config.height = "60rem";
@@ -29,7 +38,6 @@ CKEDITOR.editorConfig = function( config ) {
 
 	];
 
-	config.removeButtons = 'NewPage,Paste,PasteText,PasteFromWord,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,Blockquote,CreateDiv,TextColor,BGColor,Styles,Font,FontSize,Smiley,Iframe,PageBreak,Table,Flash,Anchor,Templates';
-
+	config.removeButtons = 'ExportPdf,NewPage,Paste,PasteText,PasteFromWord,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,Blockquote,CreateDiv,TextColor,BGColor,Styles,Font,FontSize,Smiley,Iframe,PageBreak,Table,Flash,Anchor,Templates';
 
 };

@@ -104,6 +104,13 @@ a {
 	align-items: center;
 }
 
+.distanciaicono{ 
+	margin-top: 10px;
+}
+.disrec{
+	margin-bottom: 5px;
+}
+
 .menu .btn-departamentos {
 	color: #fff;
 	padding: 7px;
@@ -111,12 +118,12 @@ a {
 	display: flex;
 	align-items: flex-end;
 	border: 1px solid transparent;
-	font-size: 12px;
+	font-size: 16px;
 	cursor: default;
 }
 
-.menu .btn-departamentos i {
-	margin-left: 20px;
+.menu .btn-departamentos span {
+	margin-left: 10px;
 	position: relative;
 	bottom: 3px;
 	margin-bottom: 0.1em;
@@ -126,9 +133,13 @@ a {
 	border: 1px solid rgba(255,255,255, .4);
 }
 
-.menu .btn-departamentos span {
+.menu .btn-departamentos span.textSecciones {
+	margin-left: 0px;
+	position: relative;
+	bottom: 3px;
+	margin-bottom: 0.1em;
 	display: block;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .menu .contenedor-enlaces-nav .enlaces  {
@@ -205,7 +216,7 @@ body.dark .grid > div {
 	display: none;
 }
 
-.grid .btn-regresar i {
+.grid .btn-regresar span {
 	margin-right: 10px;
 }
 
@@ -228,7 +239,7 @@ body.dark .grid > div {
 	padding: 10px 20px;
 }
 
-.grid .categorias a i {
+.grid .categorias a span {
 	display: none;
 }
 
@@ -237,7 +248,7 @@ body.dark .grid > div {
 	font-weight: bold;
 }
 
-.grid .categorias a:hover i {
+.grid .categorias a:hover span {
 	display: inline-block;
 }
 
@@ -373,9 +384,9 @@ body.dark .grid .enlaces-subcategoria a:hover {
 		cursor: pointer;
 	}
 
-	.menu .btn-departamentos i {
+	.menu .btn-departamentos span.icono {
 		position: static;
-		margin-left: 20px;
+		margin-left: 0px;
 		transform: rotate(-90deg);
 	}
 
@@ -411,7 +422,11 @@ body.dark .grid .enlaces-subcategoria a:hover {
 	}
 
 	.grid .btn-regresar {
-		display: inline-block;
+		display: flex;
+		align-content: center;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.grid .categorias .subtitulo {

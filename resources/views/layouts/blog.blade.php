@@ -17,7 +17,6 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
-
         <style>
         /* Material Icons*/
         @font-face {
@@ -91,6 +90,17 @@
                 src: url('{{asset('assetsWeb/fonts/FontCMSBLOG/serif-italic/OTF/FontCMSBLOGSerif-BoldItalic.otf')}}') format('opentype');
                 
             }    
+
+            /* Parisienne */
+            @font-face {
+            font-family: 'Parisienne';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('{{asset('assetsWeb/fonts/Parisienne/Parisienne-Regular.woff2')}}') format('woff2');
+            src: url('{{asset('assetsWeb/fonts/Parisienne/Parisienne-Regular.ttf')}}') format('truetype');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }    
         </style> 
 
         <link href="{{ asset('assetsWeb/plugins/css/scss/bootstrap.css') }}" rel="stylesheet">
@@ -102,14 +112,14 @@
     <header>    
         <nav class="menu" id="menu">
             <div class="contenedor contenedor-botones-menu">
-                <button id="btn-menu-barras" class="btn-menu-barras"><i class="fas fa-bars"></i></button>
-                <button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fas fa-times"></i></button>
+                <button id="btn-menu-barras" class="btn-menu-barras"><span class="material-icons-two-tone distanciaicono">menu</span></button>
+                <button id="btn-menu-cerrar" class="btn-menu-cerrar"><span class="material-icons-two-tone distanciaicono">close</span></button>
             </div>
 
             <div class="contenedor contenedor-enlaces-nav">
                 <div class="btn-departamentos" id="btn-departamentos">
-                    <p>Todas las <span>Secciones</span></p>
-                    <i class="fas fa-caret-down"></i>
+                    <p>Todas las <span class="textSecciones">Secciones</span></p>
+                    <span class="material-icons-two-tone icono">expand_more</span>
                 </div>
                 
                 <div class="enlaces">
@@ -128,22 +138,22 @@
             <div class="contenedor contenedor-grid">
                 <div class="grid" id="grid">
                     <div class="categorias">
-                        <button class="btn-regresar"><i class="fas fa-arrow-left"></i> Regresar</button>
+                        <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span> <span class="disrec">Regresar</span></button>
                         <h3 class="subtitulo">Categorias</h3>
 
-                        <a href="#" data-categoria="tecnologia-y-computadoras">Tecnología y Computadoras <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="libros">Libros <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="ropa-y-accesorios">Ropa y Accesorios <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="hogar-y-cocina">Hogar y Cocina <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="juegos-y-juguetes">Juegos y Juguetes <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="salud-y-belleza">Salud y Belleza <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="alimentos-y-bebidas">Alimentos y Bebidas <i class="fas fa-angle-right"></i></a>
+                        <a href="#" data-categoria="tecnologia-y-computadoras">Tecnología y Computadoras <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="libros">Libros <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="ropa-y-accesorios">Ropa y Accesorios <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="hogar-y-cocina">Hogar y Cocina <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="juegos-y-juguetes">Juegos y Juguetes <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="salud-y-belleza">Salud y Belleza <span class="material-icons-two-tone">arrow_forward_ios</span></a>
+                        <a href="#" data-categoria="alimentos-y-bebidas">Alimentos y Bebidas <span class="material-icons-two-tone">arrow_forward_ios</span></a>
                     </div>
 
                     <div class="contenedor-subcategorias">
                         <div class="subcategoria" data-categoria="tecnologia-y-computadoras">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Tecnología y Computadoras</h3>
                                 <a href="#">Laptops</a>
                                 <a href="#">Tablets</a>
@@ -176,7 +186,7 @@
 
                         <div class="subcategoria" data-categoria="libros">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Libros</h3>
                                 <a href="#">Top Sellers</a>
                                 <a href="#">Ciencia Ficcion</a>
@@ -208,7 +218,7 @@
 
                         <div class="subcategoria" data-categoria="ropa-y-accesorios">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Ropa y Accesorios</h3>
                                 <a href="#">Ropa</a>
                                 <a href="#">Zapatos</a>
@@ -241,7 +251,7 @@
                         <div class="subcategoria" data-categoria="hogar-y-cocina">
 
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Hogar y Cocina</h3>
                                 <a href="#">Cocina</a>
                                 <a href="#">Electrodomesticos</a>
@@ -277,7 +287,7 @@
 
                         <div class="subcategoria" data-categoria="juegos-y-juguetes">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Juegos y Juguetes</h3>
                                 <a href="#">Juguetes</a>
                                 <a href="#">Juegos de Mesa</a>
@@ -309,7 +319,7 @@
 
                         <div class="subcategoria" data-categoria="salud-y-belleza">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Salud y Belleza</h3>
                                 <a href="#">Cuidado de la Piel</a>
                                 <a href="#">Maquillaje</a>
@@ -341,7 +351,7 @@
 
                         <div class="subcategoria" data-categoria="alimentos-y-bebidas">
                             <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                <button class="btn-regresar"><span class="material-icons-two-tone">arrow_back</span>Regresar</button>
                                 <h3 class="subtitulo">Alimentos y Bebidas</h3>
                                 <a href="#">Alimentos</a>
                                 <a href="#">Bebidas</a>
@@ -406,7 +416,6 @@
         <script src="{{ asset('assetsWeb/js/switch.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>
         <script src="{{ asset('assetsWeb/plugins/js/bootstrap.min.js') }}"></script>
-        <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
         @yield('scripts')
 
         <footer class="d-flex footer mt-5 bg-dark text-white" >
