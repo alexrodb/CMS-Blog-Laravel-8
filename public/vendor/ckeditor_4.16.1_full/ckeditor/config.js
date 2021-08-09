@@ -7,6 +7,11 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	config.removePlugins = 'exportpdf,image';
 
+	// mathjax:
+	config.extraPlugins = 'mathjax';
+	config.mathJaxClass = 'katex';
+	config.mathJaxLib = 'http:\/\/localhost\/CMS-Blog-Laravel-8\/public\/vendor\/MathJax-2.7.9\/MathJax.js?config=TeX-AMS_HTML';
+
 	config.extraPlugins = 'lineutils';
 	config.extraPlugins = 'clipboard';
 	config.extraPlugins = 'dialog';
@@ -15,7 +20,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.extraPlugins = 'widget';
 	config.extraPlugins = 'image2';
 
-	config.language = 'es';
+	config.language = 'es-mx';
 	config.uiColor = '#9E9E9E';
 	config.height = "60rem";
 	config.toolbarCanCollapse = true;

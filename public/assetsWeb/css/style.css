@@ -272,7 +272,10 @@ body.dark .blog-post .blog-post-title {
 .blog-post  .bodyPost .image figcaption{
     margin: 0.5em;
     font-size: 0.95em;
-    
+}
+
+.textPost p img {
+    margin: 1em;
 }
 
 .bodyPost img [style] {
@@ -282,7 +285,7 @@ body.dark .blog-post .blog-post-title {
 
 .bodyPost{
     font-size: 1.25em;
-    line-height: 1.77em;
+    line-height: 1.8em;
     margin-top: 0.6em;
     margin-bottom: 1.5em;
     text-align: justify;

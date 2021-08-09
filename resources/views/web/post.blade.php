@@ -210,6 +210,14 @@
 </div>
 @endsection
 
+@section('styles')
+    <!-- KaTeX -->
+    <link href="{{ asset('assetsWeb/plugins/katex/katex.css') }}" rel="stylesheet">
+@endsection 
+
 @section('scripts')
-    <script src="{{ asset('assetsWeb/js/imgResponsives.js') }}"></script>
+    <script defer src="{{ asset('assetsWeb/js/imgResponsives.js') }}"></script>
+    <!-- KaTeX -->
+    <script defer src="{{ asset('assetsWeb/plugins/katex/katex.js') }}"></script>
+    <script defer src="{{ asset('assetsWeb/plugins/katex/contrib/auto-render.js') }}" onload="renderMathInElement(document.body);"></script>
 @endsection 

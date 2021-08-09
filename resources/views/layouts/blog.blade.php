@@ -101,9 +101,9 @@
             src: url('{{asset('assetsWeb/fonts/Parisienne/Parisienne-Regular.ttf')}}') format('truetype');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
             }    
-        </style> 
-
-        <link href="{{ asset('assetsWeb/plugins/css/scss/bootstrap.css') }}" rel="stylesheet">
+        </style>
+        @yield('styles')
+        <link href="{{ asset('assetsWeb/plugins/bootstrap/css/scss/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/styleMenu.css') }}" rel="stylesheet">
         <link href="{{ asset('assetsWeb/css/style.css') }}" rel="stylesheet">
     
@@ -412,10 +412,11 @@
         @yield('content')
         </main>
 
-        <script src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
-        <script src="{{ asset('assetsWeb/js/switch.js') }}"></script>
-        <script src="{{ asset('assetsWeb/plugins/js/popper.min.js') }}"></script>
-        <script src="{{ asset('assetsWeb/plugins/js/bootstrap.min.js') }}"></script>
+        <script defer src="{{ asset('assetsWeb/js/menujs.min.js') }}"></script>
+        <script defer src="{{ asset('assetsWeb/js/switch.js') }}"></script>
+        <!-- Bootstrap -->
+        <script defer src="{{ asset('assetsWeb/plugins/bootstrap/js/popper.min.js') }}"></script>
+        <script defer src="{{ asset('assetsWeb/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
         @yield('scripts')
 
         <footer class="d-flex footer mt-5 bg-dark text-white" >
