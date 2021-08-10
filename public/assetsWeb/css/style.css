@@ -113,23 +113,39 @@ p{
     margin-bottom: 0em;
 }
 
+.errorinfo{
+    color: var(--color-gray-1000);;
+}
+
+.errorinfo p {
+    font-size: 1.5em;
+}
+
+body.dark .errorinfo {
+    color: var(--color-white);
+}
+
 .titlecategory { 
     font-family: 'FontCMSBLOGSerif-BoldItalic'; 
     font-size: 0.95em; font-weight: 400;
-    
-    
 }
+
 body.dark .titlecategory {
     color: var(--color-white);
 }
 
-.colorLinkCategory {color: var(--color-primary); font-size: 1.3em;}
-.pictureArticle {margin-top: 1.5em;}
+.colorLinkCategory {
+    color: var(--color-primary);
+    font-size: 1.3em;
+}
+
+.pictureArticle {
+    margin-top: 1.5em;
+}
 
 .title-photo{
     font: 0.9em 'FontCMSBLOGSerif-Regular'; 
     color: var(--color-gray-700);
-
 }
 
 body.dark .title-photo {
@@ -169,8 +185,6 @@ body.dark .textresumen {
     font-family: 'FontCMSBLOGSerif-Bold';
     font-size: 1.25em;
     line-height: 1.2;
-    
-    
 }
 
 .card-titlecategory{
@@ -185,14 +199,10 @@ body.dark .textresumen {
     font-size: 1em;
     line-height: 1.3;
     text-align: justify;
-    
-    
 }
 .card-time {
     font-family: 'FontCMSBLOGSans-Regular';
     font-size: 0.9em;
-    
-    
 }
 .card-time a {
     font-family: 'FontCMSBLOGSans-Regular';

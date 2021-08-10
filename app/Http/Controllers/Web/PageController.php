@@ -18,15 +18,19 @@ class PageController extends Controller
         $date = Carbon::now();
         $posts = Post::orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);//Enlista todos los post
         return view('web.posts', compact('posts','date'));
-        
     }
 
     public function category($slug){
         $date = Carbon::now();
-        $category = Category::where('slug', $slug)->pluck('id')->first(); //busca el id de la categoria
+        $category = Category::where('slug', $slug)->pluck('id')->first(); //busca el id de la categoría
         $posts = Post::where('category_id',$category) //Enlista todos los que tengan relación con esta categoría
         ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);
-        return view('web.posts', compact('posts','date'));
+    
+        if(count($posts) > 0){
+            return view('web.posts', compact('posts','date'));
+        }else{
+            abort(404);
+        }
     }
 
     public function tag($slug){
@@ -35,14 +39,19 @@ class PageController extends Controller
             $query->where('slug',$slug);
         }) //Enlista todos los post que tengan etiquetas siempre y cuando estas etiquetas tengan el mismo slug que se esta usando
         ->orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);
-        return view('web.posts', compact('posts','date'));
+
+        if(count($posts) > 0){
+            return view('web.posts', compact('posts','date'));
+        }else{
+            abort(404);
+        }
     }
 
     public function post($slug){
         $date = Carbon::now();
-        $post = Post::where('slug',$slug)->first();
-
-        $this->authorize('published',$post);
+        $post = Post::where('slug', $slug)->firstOrFail();//firstOrFail devuelve el primer resultado de la consulta, si ningún registro es encontrado retorna una excepción ModelNotFoundException con vista de error 404.
+        
+        $this->authorize('published', $post);
 
         //Contador de visitas que incrementa cuando se visita cada post o entrada.
         $incrementCounterVisits = $post;

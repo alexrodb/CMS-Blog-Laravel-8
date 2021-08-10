@@ -88,7 +88,11 @@ php artisan config:cache
 php artisan optimize
 -------------------------------------
 
+php artisan vendor:publish --tag=laravel-errors
 
+Copied Directory [\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\views] To [\resources\views\errors]
+
+-------------------------------------
 composer require haruncpi/laravel-simple-filemanager
 php artisan filemanager:install
 

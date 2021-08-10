@@ -14,10 +14,10 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.extraPlugins = 'lineutils';
 	config.extraPlugins = 'clipboard';
-	config.extraPlugins = 'dialog';
 	config.extraPlugins = 'dialogui';
 	config.extraPlugins = 'notification';	
 	config.extraPlugins = 'widget';
+	config.extraPlugins = 'dialog';
 	config.extraPlugins = 'image2';
 
 	config.language = 'es-mx';
