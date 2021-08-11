@@ -43,6 +43,6 @@ CKEDITOR.editorConfig = function( config ) {
 
 	];
 
-	config.removeButtons = 'ExportPdf,NewPage,Paste,PasteText,PasteFromWord,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,Blockquote,CreateDiv,TextColor,BGColor,Styles,Font,FontSize,Smiley,Iframe,PageBreak,Table,Flash,Anchor,Templates';
+	config.removeButtons = 'ExportPdf,NewPage,Paste,PasteText,PasteFromWord,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,CreateDiv,TextColor,BGColor,Styles,Font,FontSize,Smiley,Iframe,PageBreak,Table,Flash,Anchor,Templates';
 
 };
