@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\blog;
 
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
 
-use App\Http\Requests\CategoryStoreRequest;
-use App\Http\Requests\CategoryUpdateRequest;
+use App\Http\Requests\requestBlog\CategoryStoreRequest;
+use App\Http\Requests\requestBlog\CategoryUpdateRequest;
 
-use App\Models\Category;
+use App\Models\blog\Category;
 
 class CategoryController extends Controller
 {
@@ -59,6 +59,7 @@ class CategoryController extends Controller
         $category->category_code = $category_code;
         $category->name = $request->name;
         $category->slug = $request->slug;
+        $category->body = $request->body;
         $category->save();
 
         //$category = Category::create($request->all());//Acepta datos masivos, pero en CategoryStoreRequest y en el modelo Category hay control de los campos que se necesitan 

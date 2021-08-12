@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\blog;
 
 use App\Http\Controllers\Controller;
 
@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 use App\Helpers\Helper;
 use Illuminate\Support\Facades\Storage;
 
-use App\Http\Requests\PostStoreRequest;
-use App\Http\Requests\PostUpdateRequest;
+use App\Http\Requests\requestBlog\PostStoreRequest;
+use App\Http\Requests\requestBlog\PostUpdateRequest;
 
-use App\Models\Category;
-use App\Models\Post;
-use App\Models\Tag;
+use App\Models\blog\Category;
+use App\Models\blog\Post;
+use App\Models\blog\Tag;
 
 class PostController extends Controller
 {

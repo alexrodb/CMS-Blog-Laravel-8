@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\blog;
 
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
 
-use App\Http\Requests\TagStoreRequest;
-use App\Http\Requests\TagUpdateRequest;
+use App\Http\Requests\requestBlog\TagStoreRequest;
+use App\Http\Requests\requestBlog\TagUpdateRequest;
 
-use App\Models\Tag;
+use App\Models\blog\Tag;
 
 class TagController extends Controller
 {
@@ -38,7 +38,6 @@ class TagController extends Controller
      */
     public function create()
     {
-        
         return view('admin.tags.create',[
             'tag'=> new tag // se envia un proyecto vacio {{ old('xxxx', null)}} = {{ old('xxxx')}}, esta linea es para hacer identicos los formularios y poder reutizar uno para guardar y editar.
         ]);

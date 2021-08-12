@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\requestBlog;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostStoreRequest extends FormRequest
+class PostUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,9 @@ class PostStoreRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        return [  
             'name'          => 'required',
-            'slug'          => 'required|unique:posts,slug',
+            'slug'          => 'required|unique:posts,slug,' . $this->post, // El Slug debe ser unico, pero ignora el id actual que se está actualizando.
             'category_id'   => 'required|integer',
             'tags'          => 'required|array',
             'status'        => 'required|in:DRAFT,PUBLISHED',

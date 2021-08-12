@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\TagController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\blog\CategoryController;
+use App\Http\Controllers\Admin\blog\TagController;
+use App\Http\Controllers\Admin\blog\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +20,10 @@ use App\Http\Controllers\Admin\PostController;
 Route::redirect('/', 'blog');
 
 //web
-Route::get('blog',             'App\Http\Controllers\Web\PageController@blog')->name('blog');
-Route::get('entrada/{slug}',   'App\Http\Controllers\Web\PageController@post')->name('post');
-Route::get('categoria/{slug}', 'App\Http\Controllers\Web\PageController@category')->name('category');
-Route::get('etiqueta/{slug}',  'App\Http\Controllers\Web\PageController@tag')->name('tag');
+Route::get('blog',             'App\Http\Controllers\Web\blog\PageController@blog')->name('blog');
+Route::get('entrada/{slug}',   'App\Http\Controllers\Web\blog\PageController@post')->name('post');
+Route::get('categoria/{slug}', 'App\Http\Controllers\Web\blog\PageController@category')->name('category');
+Route::get('etiqueta/{slug}',  'App\Http\Controllers\Web\blog\PageController@tag')->name('tag');
 
 //Administración
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {return view('admin.dashboard');})->name('dashboard');
