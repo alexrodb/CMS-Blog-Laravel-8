@@ -1,7 +1,7 @@
-<a href="/">
+<a href="{{ route('blog') }}">
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="328.074px" height="52.89px" viewBox="0 0 328.074 52.89" style="enable-background:new 0 0 328.074 52.89;"
-	 xml:space="preserve" {{ $attributes }}>
+	width="328.074px" height="52.89px" viewBox="0 0 328.074 52.89" style="enable-background:new 0 0 328.074 52.89;"
+	xml:space="preserve" {{ $attributes }}>
 <g>
 	<path style="fill:#000000;" d="M9.956,6.059c3.664-2.557,8.162-3.732,12.59-3.888c4.197-0.071,8.46,0.66,12.294,2.407
 		c-0.203,4.026-0.412,8.052-0.642,12.078c-1.04-0.002-2.078-0.004-3.116-0.002c-0.333-3.051-0.825-6.082-1.156-9.131

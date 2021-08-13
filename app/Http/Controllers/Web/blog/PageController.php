@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Web\blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\blog\Post;
-use App\Models\blog\Category;
+use App\Models\Post;
+use App\Models\Category;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;

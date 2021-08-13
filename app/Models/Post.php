@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\blog;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
     //Permite salvar datos de forma masiva, 
     protected $fillable = [
-        'post_code','user_id','category_id','name','slug','status','abstract','body','picture','title_picture','source_picture'
+        'post_code','user_id','category_id','name','slug','status','abstract','body','picture','title_picture','source_picture','pdf_blog'
     ];
 
     //Relación uno a muchos inversa

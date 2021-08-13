@@ -3,11 +3,6 @@
                 <div class="container">
                     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                     <div class="row">
-                        <div class="col-12 mb-4">
-                            <div class="d-flex flex-row justify-content-start">
-                                <button type="submit" class="btn btn-success"><span class="bi bi-save"></span> {{$btnText}}</button>
-                            </div>
-                        </div>
                         <div class="col-md-6">
                             @php
                                 $statusPost = $post->status;
@@ -34,7 +29,10 @@
                             </div>
                             <!--name-->
                             <label class="mb-3">Nombre </label>
-                            <input type="text" name="name" class="form-control  mb-3" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)" required>
+                            <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" id = "name"  value="{{ old('name', $post->name)}}" onload="stringToSlug(this.value)" onkeyup="stringToSlug(this.value)" required>
+                            <button type="submit" class="btn btn-success btn-sm"><span class="bi bi-save"></span> {{$btnText}}</button>
+                            </div>
                             <!--slug--> 
                             <label class="mb-3">URL amigable</label>
                             <div class="input-group flex-nowrap  mb-3">
@@ -97,6 +95,22 @@
                     <div class="input-group">
                         <textarea class="form-control" id="ckeditor" name="body" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
                     </div>
+
+                    <!--picture--> 
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label mt-3">Documento PDF</label>
+                        <input class="form-control" type="file" id="formFile" name="pdf_up" accept="application/pdf">
+                    </div>
+                        @if($post->pdf_blog)
+                            <div class="d-flex justify-content-center mt-2">
+                            <embed src="{{ asset('storage/pdf/blog/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
+                            </div>
+                            <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/pdf/blog/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
+                        @else
+                            <div class="d-flex justify-content-center mt-2">
+                                <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/pdf/blog/NoPDF.pdf') }}" alt="{{ $post->pdf }}">
+                            </div>
+                        @endif
 
                     <!-- ckeditor -->
                     <script src="{{ asset('vendor/ckeditor_4.16.1_full/ckeditor/ckeditor.js') }}"></script>

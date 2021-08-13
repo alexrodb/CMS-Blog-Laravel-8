@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\requestBlog\PostStoreRequest;
 use App\Http\Requests\requestBlog\PostUpdateRequest;
 
-use App\Models\blog\Category;
-use App\Models\blog\Post;
-use App\Models\blog\Tag;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -87,8 +87,28 @@ class PostController extends Controller
             $pictureNameToStore = 'NoPicture.jpg';
         }
 
+        //file
+        //Gestiona el guardado de un documento en pdf
+        if($request->hasFile('pdf_up'))
+        {
+            // Se busca el nombre del archivo junto con la extensión que se envio desde el formulario.
+            $filenameWithExt = $request->file('pdf_up')->getClientOriginalName();
+            // Se obtine solo el nombre del archivo
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Se obtine solo la extensión del archivo
+            $extension = $request->file('pdf_up')->getClientOriginalExtension();
+            // Se crea el nombre para guardarlo
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Sube y guarda el pdf
+            $path = $request->file('pdf_up')->storeAs('public/pdf/blog', $fileNameToStore);
+        } else
+        {
+            // Si no se sube imagen coloca pone este nombre.
+            $fileNameToStore = 'NoPDF.pdf';
+        }
+
         //Se adjunta al request el campo file y image con el nombre que hemos creado.
-        $request-> request->add(['picture'=>$pictureNameToStore]);
+        $request-> request->add(['pdf_blog'=>$fileNameToStore]);
 
         //Salva los datos
         $post = Post::create($request->all());//Acepta datos masivos, pero en PostStoreRequest y en el modelo Post hay control de los campos que se necesitan 

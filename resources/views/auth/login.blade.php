@@ -16,7 +16,7 @@
             @csrf
             <div class="mb-3">
                 <x-label class="mb-2 text-muted" for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus tabindex="1"/>
                     <div class="invalid-feedback">
                         El correo electrónico ingresado es invalido.
                     </div>
@@ -26,12 +26,12 @@
 				<div class="mb-2 w-100">
                     <x-label class="text-muted" for="password" value="{{ __('Password') }}" />
                     @if (Route::has('password.request'))
-                    <a class="float-end link-light" href="{{ route('password.request') }}">
+                    <a class="float-end link-light" href="{{ route('password.request') }}" tabindex="5">
                         {{ __('Forgot your password?') }}
                     </a>
                     @endif
 				</div>
-				<x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
+				<x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" tabindex="2" />
                     <div class="invalid-feedback">
                         Se necesita una contraseña para iniciar una sesión.
                     </div>
@@ -39,10 +39,10 @@
 
             <div class="d-flex align-items-center">
 				<div class="form-check">
-                    <x-checkbox id="remember_me" name="remember" />
+                    <x-checkbox id="remember_me" name="remember" tabindex="3"/>
 					<label for="remember" class="form-check-label">{{ __('Remember me') }}</label>
 				</div>
-				<button type="submit" class="btn btn-danger ms-auto">
+				<button type="submit" class="btn btn-danger ms-auto" tabindex="4">
                     {{ __('Log in') }}
 				</button>
 			</div>
