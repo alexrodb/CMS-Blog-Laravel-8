@@ -40,6 +40,7 @@ class PostFactory extends Factory
             'source_picture' => $this->faker->text(15),
             'total_visits'=> rand(1,200000),
             'pdf_blog'=> rand(1,10).'.pdf',
+            'page_pdf'=> rand(2,3),
         ];
     }
 }

@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
     //Permite salvar datos de forma masiva, 
     protected $fillable = [
-        'post_code','user_id','category_id','name','slug','status','abstract','body','picture','title_picture','source_picture','pdf_blog'
+        'post_code','user_id','category_id','name','slug','status','abstract','body','picture','title_picture','source_picture','pdf_blog','page_pdf'
     ];
 
     //Relación uno a muchos inversa

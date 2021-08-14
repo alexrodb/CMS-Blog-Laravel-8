@@ -23,7 +23,7 @@
         @if($post->picture)
         <div class="d-flex justify-content-center align-items-center">
             <figure class="figure">
-            <img src="{{ asset('storage/img/picturePost/'.$post->picture) }}" class="pictureArticle img-fluid" alt="{{ $post->name }}">
+            <img src="{{ asset('storage/blog/img/picturePost/'.$post->picture) }}" class="pictureArticle img-fluid" alt="{{ $post->name }}">
                     <div class="d-flex flex-row justify-content-end align-items-center">
                         <div  class="mt-1 ">
                             <span class="material-icons-two-tone">photo_camera</span>
@@ -45,6 +45,10 @@
         <div class="bodyPost" id="bodyPost"> 
         <div class="textPost">{!! $post->body!!}</div>
         </div>
+
+        @if($post->pdf_blog != 'NoPDF.pdf') 
+        <div id="PDFdocument"></div>
+        @endif
 
         <div class="d-flex flex-row justify-content-between mb-3">
             <div class="mb-2 datetime">      
@@ -119,7 +123,7 @@
                 @if(!empty($prev))
                 <div class="col-lg-6 col-md-12">
                     <div class="card border-0 h-100" id="card">
-                        <a href="{{route('post',$prev->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$prev->picture) }}" class="card-img-top" alt="{{ $prev->post_picture }}"></a>
+                        <a href="{{route('post',$prev->slug)}}"><img src="{{ asset('storage/blog/img/picturePost/'.$prev->picture) }}" class="card-img-top" alt="{{ $prev->post_picture }}"></a>
                         <div class="card-body">
                             <div class="d-flex flex-row justify-content-between align-items-center">
                                 <div class=""><h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $prev->category->slug)}}">{{ $prev->category->name }}</a></h3></div>
@@ -149,7 +153,7 @@
                 @if(!empty($next))
                 <div class="col-lg-6 col-md-12">
                     <div class="card border-0 h-100" id="card">
-                        <a href="{{route('post',$next->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$next->picture) }}" class="card-img-top" alt="{{ $next->post_picture }}"></a>
+                        <a href="{{route('post',$next->slug)}}"><img src="{{ asset('storage/blog/img/picturePost/'.$next->picture) }}" class="card-img-top" alt="{{ $next->post_picture }}"></a>
                         <div class="card-body">
                             <div class="d-flex flex-row justify-content-between align-items-center">
                                 <div class=""><h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $next->category->slug)}}">{{ $next->category->name }}</a></h3></div>
@@ -185,7 +189,7 @@
         @foreach($LastCategoryEntries as $LastCategoryEntrie)
         <div class="col">
             <div class="card border-0 h-100 mb-4">
-                <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$LastCategoryEntrie->picture) }}" class="card-img-top" alt="{{ $LastCategoryEntrie->post_picture }}"></a>
+                <a href="{{route('post',$LastCategoryEntrie->slug)}}"><img src="{{ asset('storage/blog/img/picturePost/'.$LastCategoryEntrie->picture) }}" class="card-img-top" alt="{{ $LastCategoryEntrie->post_picture }}"></a>
                 <div class="card-body">
                     <h3 class="card-title mt-3">{{ $LastCategoryEntrie->name }}</h3>
                     <p class="card-Abstract mt-3 mb-3">{{ $LastCategoryEntrie->abstract }}</p>
@@ -214,8 +218,22 @@
 @endsection 
 
 @section('scripts')
-    <script defer src="{{ asset('assetsWeb/js/imgResponsives.js') }}"></script>
     <!-- KaTeX -->
     <script defer src="{{ asset('assetsWeb/plugins/katex/katex.js') }}"></script>
     <script defer src="{{ asset('assetsWeb/plugins/katex/contrib/auto-render.js') }}" onload="renderMathInElement(document.body);"></script>
+
+    <!-- imgResponsives -->
+    <script defer src="{{ asset('assetsWeb/js/imgResponsives.js') }}"></script>
+
+    @if($post->pdf_blog != 'NoPDF.pdf') 
+    <!-- PDFObject -->
+    <script src="{{ asset('assetsWeb/plugins/PDFObject/pdfobject.min.js') }}"></script>
+    <script type="text/javascript">
+    var options = {
+    page: "@json($post->page_pdf)"
+    };    
+    PDFObject.embed("{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}", "#PDFdocument", options);
+    </script>
+    @endif
+
 @endsection 

@@ -80,7 +80,7 @@ class PostController extends Controller
             // Se crea el nombre para guardarlo
             $pictureNameToStore = $pictureName.'_'.time().'.'.$extension;
             // Sube y guarda la imagen
-            $path = $request->file('picture_up')->storeAs('public/img/picturePost', $pictureNameToStore);
+            $path = $request->file('picture_up')->storeAs('public/blog/img/picturePost', $pictureNameToStore);
         } else
         {
             // Si no se sube imagen coloca pone este nombre.
@@ -100,15 +100,17 @@ class PostController extends Controller
             // Se crea el nombre para guardarlo
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             // Sube y guarda el pdf
-            $path = $request->file('pdf_up')->storeAs('public/pdf/blog', $fileNameToStore);
+            $path = $request->file('pdf_up')->storeAs('public/blog/pdf', $fileNameToStore);
         } else
         {
             // Si no se sube imagen coloca pone este nombre.
             $fileNameToStore = 'NoPDF.pdf';
         }
 
-        //Se adjunta al request el campo file y image con el nombre que hemos creado.
+        //Se adjunta al request el campo picture y file con el nombre que hemos creado.
+        $request-> request->add(['picture'=>$pictureNameToStore]);
         $request-> request->add(['pdf_blog'=>$fileNameToStore]);
+        
 
         //Salva los datos
         $post = Post::create($request->all());//Acepta datos masivos, pero en PostStoreRequest y en el modelo Post hay control de los campos que se necesitan 
@@ -168,7 +170,7 @@ class PostController extends Controller
         if($request->hasFile('picture_up'))
         {
             // Elimina la anterior imagen de la entrada
-            Storage::delete('public/img/picturePost/'.$post->picture);
+            Storage::delete('public/blog/img/picturePost/'.$post->picture);
             // Se busca el nombre del archivo junto con la extensión que se envio desde el formulario. 
             $pictureNameWithExt = $request->file('picture_up')->getClientOriginalName();
             // Se obtine solo el nombre del archivo
@@ -178,15 +180,38 @@ class PostController extends Controller
             // Crea el nombre para guardarlo
             $pictureNameToStore = $pictureName.'_'.time().'.'.$extension;
             // Sube y guarda la imagen nueva
-            $path = $request->file('picture_up')->storeAs('public/img/picturePost', $pictureNameToStore);
+            $path = $request->file('picture_up')->storeAs('public/blog/img/picturePost', $pictureNameToStore);
         } else
         {
             //Si no se sube imagen mantiene el nombre de la anterior imagen.
             $pictureNameToStore = $post->picture;
         }
 
+        //file
+        //Gestiona como actualizar el pdf, eliminando el que existe y guardando uno nuevo como reemplazo del anterior.
+        if($request->hasFile('pdf_up'))
+        {
+            // Elimina la anterior imagen de la entrada
+            Storage::delete('public/blog/pdf/'.$post->pdf_blog);
+            // Se busca el nombre del archivo junto con la extensión que se envio desde el formulario. 
+            $filenameWithExt = $request->file('pdf_up')->getClientOriginalName();
+            // Se obtine solo el nombre del archivo
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Se obtine solo la extensión del archivo
+            $extension = $request->file('pdf_up')->getClientOriginalExtension();
+            // Crea el nombre para guardarlo
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Sube y guarda la imagen nueva
+            $path = $request->file('pdf_up')->storeAs('public/blog/pdf', $fileNameToStore);
+        } else
+        {
+            // Si no se sube imagen mantiene el nombre de la anterior imagen.
+            $fileNameToStore = $post->pdf_blog;
+        }
+
         //Se adjunta al request el campo file y image con el nombre que hemos creado.
         $request-> request->add(['picture'=>$pictureNameToStore]);
+        $request-> request->add(['pdf_blog'=>$fileNameToStore]);
 
         //Salva los datos
         $post->fill($request->all())->save();
@@ -196,8 +221,6 @@ class PostController extends Controller
         
         return redirect()->route('admin.posts.edit', $post->id)
         ->with('info','Actualizado con éxito');
-
-        
     }
     
 
@@ -216,8 +239,12 @@ class PostController extends Controller
         //Borra la imagen principal que tiene una Entrada
         if($post->picture != 'noimage.jpg')
             {
-            Storage::delete('public/img/picturePost/'.$post->picture);
+            Storage::delete('public/blog/img/picturePost/'.$post->picture);
             };
+        if($post->pdf_blog != 'NoPDF.pdf')
+            {
+            Storage::delete('public/blog/pdf/'.$post->pdf_blog);
+            };    
         
         $post->delete();
 

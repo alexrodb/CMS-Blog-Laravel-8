@@ -606,3 +606,11 @@ blockquote:after {
 	right:  -2.1rem;
 	bottom: 2.2rem;
 }
+
+.pdfobject-container { 
+    height: 65rem;
+    width: 100%;
+    border: 0.5rem solid rgba(0,0,0,.1); 
+    margin-top: 2em;
+    margin-bottom: 2em;
+}

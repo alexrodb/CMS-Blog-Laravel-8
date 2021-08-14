@@ -46,7 +46,7 @@
                             </div>
                             @if($post->picture)
                                 <div class="d-flex justify-content-center mt-2">
-                                    <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/img/picturePost/'.$post->picture) }}" alt="{{ $post->picture }}">
+                                    <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/blog/img/picturePost/'.$post->picture) }}" alt="{{ $post->picture }}">
                                 </div>
                             @else
                                 <div class="d-flex justify-content-center mt-2">
@@ -96,14 +96,19 @@
                         <textarea class="form-control" id="ckeditor" name="body" aria-label="With textarea">{{ old('body', $post->body)}}</textarea>
                     </div>
 
-                    <!--picture--> 
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label mt-3">Documento PDF</label>
+                    <!--pdf_blog-->
+                    <div class="col-md-8">
+                    <label for="formFile" class="form-label mt-3">Documento PDF</label>
+                    <div class="input-group mb-3">
                         <input class="form-control" type="file" id="formFile" name="pdf_up" accept="application/pdf">
+                        <span class="input-group-text">Página PDF</span>
+                        <input type="number" class="form-control" name="page_pdf" value="{{ old('page_pdf', $post->page_pdf)}}" placeholder="Número de página" aria-label="Página PDF" >
                     </div>
+                    </div>
+
                         @if($post->pdf_blog)
                             <div class="d-flex justify-content-center mt-2">
-                            <embed src="{{ asset('storage/pdf/blog/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
+                            <embed src="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
                             </div>
                             <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/pdf/blog/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
                         @else

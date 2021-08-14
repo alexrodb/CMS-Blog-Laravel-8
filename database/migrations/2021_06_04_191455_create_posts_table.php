@@ -28,6 +28,7 @@ class CreatePostsTable extends Migration
             $table->string('source_picture',128)->nullable();
             $table->integer('total_visits')->nullable();
             $table->string('pdf_blog',128)->nullable();
+            $table->integer('page_pdf')->nullable();
 
             //Relation - Relaciones 
             //Si eliminamos un usuario se eliminan los post pertenecientes al usuario

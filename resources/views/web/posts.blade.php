@@ -4,7 +4,7 @@
 @foreach($posts as $post)
 <div class="col">
     <div class="card border-0 h-100" id="card">
-        <a href="{{route('post',$post->slug)}}"><img src="{{ asset('storage/img/picturePost/'.$post->picture) }}" class="card-img-top" alt="{{ $post->post_picture }}"></a>
+        <a href="{{route('post',$post->slug)}}"><img src="{{ asset('storage/blog/img/picturePost/'.$post->picture) }}" class="card-img-top" alt="{{ $post->post_picture }}"></a>
         <div class="card-body">
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class=""><h3 class="card-titlecategory mt-3 mb-3"><a href="{{ route('category', $post->category->slug)}}">{{ $post->category->name }}</a></h3></div>
