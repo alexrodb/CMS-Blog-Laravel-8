@@ -110,7 +110,7 @@
                             <div class="d-flex justify-content-center mt-2">
                             <embed src="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
                             </div>
-                            <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/pdf/blog/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
+                            <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
                         @else
                             <div class="d-flex justify-content-center mt-2">
                                 <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/pdf/blog/NoPDF.pdf') }}" alt="{{ $post->pdf }}">

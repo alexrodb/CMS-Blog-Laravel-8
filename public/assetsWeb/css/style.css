@@ -570,6 +570,11 @@ body.dark .logo-time{
     width: 1em;
     height: 1em;
 }
+.iconSizePDF{
+    margin-right:0.5em;
+    width: 2em;
+    height: 2em;
+}
 
 blockquote {
 	max-width: inherit;
@@ -612,5 +617,10 @@ blockquote:after {
     width: 100%;
     border: 0.5rem solid rgba(0,0,0,.1); 
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 1.2em;
+}
+
+.pdfDownload {
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
 }

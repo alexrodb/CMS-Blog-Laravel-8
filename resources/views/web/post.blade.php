@@ -48,6 +48,28 @@
 
         @if($post->pdf_blog != 'NoPDF.pdf') 
         <div id="PDFdocument"></div>
+        <div class="pdfDownload d-flex flex-row justify-content-center align-items-center">            
+            <a class="btn btn-dark btn-lg mx-2" href="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" target="_blank" role="button">
+                <div class="d-flex flex-row justify-content-start align-items-center">
+                    <div>
+                        <img class="iconSizePDF" src="{{ asset('assetsWeb/images/svg/icons/pdf.svg') }}" alt="link">
+                    </div>
+                    <div>
+                        Visualizar PDF
+                    </div>
+                </div>
+            </a>
+            <a class="btn btn-dark btn-lg mx-2" role="button" href="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" download>
+                <div class="d-flex flex-row justify-content-start align-items-center">
+                    <div>
+                        <img class="iconSizePDF" src="{{ asset('assetsWeb/images/svg/icons/pdfDownload.svg') }}" alt="link">
+                    </div>
+                    <div>
+                        Descargar PDF
+                    </div>
+                </div>
+            </a>
+        </div>
         @endif
 
         <div class="d-flex flex-row justify-content-between mb-3">
