@@ -98,24 +98,23 @@
 
                     <!--pdf_blog-->
                     <div class="col-md-8">
-                    <label for="formFile" class="form-label mt-3">Documento PDF</label>
-                    <div class="input-group mb-3">
-                        <input class="form-control" type="file" id="formFile" name="pdf_up" accept="application/pdf">
-                        <span class="input-group-text">Página PDF</span>
-                        <input type="number" class="form-control" name="page_pdf" value="{{ old('page_pdf', $post->page_pdf)}}" placeholder="Número de página" aria-label="Página PDF" >
+                        <label for="formFile" class="form-label mt-3">Documento PDF</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="file" id="formFile" name="pdf_up" accept="application/pdf">
+                            <span class="input-group-text">Página PDF</span>
+                            <input type="number" class="form-control" name="page_pdf" value="{{ old('page_pdf', $post->page_pdf)}}" placeholder="Número de página" aria-label="Página PDF" >
+                        </div>
                     </div>
-                    </div>
-
-                        @if($post->pdf_blog)
-                            <div class="d-flex justify-content-center mt-2">
-                            <embed src="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
-                            </div>
-                            <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
-                        @else
-                            <div class="d-flex justify-content-center mt-2">
-                                <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/pdf/blog/NoPDF.pdf') }}" alt="{{ $post->pdf }}">
-                            </div>
-                        @endif
+                    @if($post->pdf_blog)
+                        <div class="d-flex justify-content-center mt-2">
+                        <embed src="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" type="application/pdf" width="100%" height="100%">
+                        </div>
+                        <p>Puedes descargarte el archivo desde <a href="{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}" target="_blank">aquí</a></p>
+                    @else
+                        <div class="d-flex justify-content-center mt-2">
+                        <img class="img-thumbnail img-fluid" width="50%" height="50%" src="{{ asset('storage/pdf/blog/NoPDF.pdf') }}" alt="{{ $post->pdf }}">
+                        </div>
+                    @endif
 
                     <!-- ckeditor -->
                     <script src="{{ asset('vendor/ckeditor_4.16.1_full/ckeditor/ckeditor.js') }}"></script>
@@ -132,6 +131,15 @@
                     </div>
                     <div class="col-12 p-2">
                         <div class="d-flex flex-row justify-content-end">
-                        <button type="submit" class="btn btn-success btn-lg"><span class="bi bi-save"></span> {{$btnText}}</button>
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <div>
+                                        <img class="iconSize" src="{{ asset('assetsAdministrator/image/svg/icons/disquete.svg') }}" alt="link">
+                                    </div>
+                                    <div>
+                                        {{$btnText}}
+                                    </div>
+                                </div>
+                            </button>
                         </div>
                     </div>

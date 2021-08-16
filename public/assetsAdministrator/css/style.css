@@ -329,6 +329,12 @@
   margin-top: 2em;
 }
 
+.iconSize{
+  margin-right:0.5em;
+  width: 1.5em;
+  height: 1.5em;
+}
+
 /* select option[selected]{
   background-color: darkred;
 }*/

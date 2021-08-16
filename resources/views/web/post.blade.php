@@ -251,10 +251,10 @@
     <!-- PDFObject -->
     <script src="{{ asset('assetsWeb/plugins/PDFObject/pdfobject.min.js') }}"></script>
     <script type="text/javascript">
-    var options = {
-    page: "@json($post->page_pdf)"
-    };    
-    PDFObject.embed("{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}", "#PDFdocument", options);
+        var options = {
+        pdfOpenParams: { view: 'FitH', page: "@json($post->page_pdf)" }
+        }; 
+        PDFObject.embed("{{ asset('storage/blog/pdf/'.$post->pdf_blog) }}", "#PDFdocument", options);
     </script>
     @endif
 

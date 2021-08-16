@@ -10,7 +10,7 @@ use App\Helpers\Helper;
 use App\Http\Requests\requestBlog\TagStoreRequest;
 use App\Http\Requests\requestBlog\TagUpdateRequest;
 
-use App\Models\blog\Tag;
+use App\Models\Tag;
 
 class TagController extends Controller
 {

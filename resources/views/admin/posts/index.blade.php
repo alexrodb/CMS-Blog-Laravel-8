@@ -28,7 +28,6 @@
                 </div>
             </div>
 
-        
             <div class="table-responsive">
                 <table class="table table-dark table-striped table-sm table align-middle">
                     <thead>
@@ -58,7 +57,6 @@
                             @else
                             <span class="badge rounded-pill bg-warning text-dark p-2 fs-6"><i class="bi bi-exclamation-circle"></i> </i> Borrador</span>       
                             @endif
-                            
                         </td>
                         <td>
                             <div class="d-flex flex-row justify-content-between ">
@@ -107,14 +105,11 @@
                         {{ $posts->render() }}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-    
 </div>
-
-
-
 @endsection
 
 @section('scripts')

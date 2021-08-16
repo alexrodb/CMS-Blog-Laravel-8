@@ -10,7 +10,7 @@ use App\Helpers\Helper;
 use App\Http\Requests\requestBlog\CategoryStoreRequest;
 use App\Http\Requests\requestBlog\CategoryUpdateRequest;
 
-use App\Models\blog\Category;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {

@@ -23,7 +23,16 @@
                 </div>
                 <div class="col-12 p-2">
                     <div class="d-flex flex-row justify-content-end">
-                    <button type="submit" class="btn btn-success"><span class="bi bi-save"></span> {{$btnText}}</button>
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <div class="d-flex flex-row justify-content-start align-items-center">
+                                <div>
+                                    <img class="iconSize" src="{{ asset('assetsAdministrator/image/svg/icons/disquete.svg') }}" alt="link">
+                                </div>
+                                <div>
+                                    {{$btnText}}
+                                </div>
+                            </div>
+                        </button>
                     </div>
                 </div>
 
