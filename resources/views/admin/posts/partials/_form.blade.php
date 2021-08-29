@@ -72,7 +72,7 @@
                             </select>
                             <!--Tags-->
                             <label class="mb-2">Escoge las etiquetas para esta entrada</label> 
-                            <select class="form-select mb-2" size="32" multiple name="tags[]" required>
+                            <select class="form-select mb-1" size="34" multiple name="tags[]" required>
                                 @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}"
                                         @foreach ($post->tags as $postTag)
